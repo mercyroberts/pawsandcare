@@ -3,8 +3,6 @@
    Features: Category filter + Pricing estimator
    ══════════════════════════════════════════ */
 
-document.addEventListener('DOMContentLoaded', function () {
-
   /* ─────────────────────────────────────
      1. CATEGORY FILTER
      Selects pills by #filterPills container
@@ -14,10 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterPills  = document.querySelectorAll('#filterPills .filter-pill');
   const serviceItems = document.querySelectorAll('#servicesGrid .service-item');
 
-  /**
-   * filterServices — shows/hides service cards by category
-   * @param {string} category — 'all', 'dogs', 'cats', or 'exotic'
-   */
   function filterServices(category) {
     serviceItems.forEach(function (item) {
       if (category === 'all') {
@@ -84,4 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-});
+  filterServices('all');
+  updateEstimator();
+
