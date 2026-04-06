@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PawsAndCare.ie — Browse all veterinary services for dogs, cats, and exotic pets in Dublin. Use the pricing estimator to plan your visit.">
+  <meta name="keywords" content="vet services, veterinary Dublin, dog vet, cat vet, exotic vet, grooming, dental, vaccination">
+  <title>Services — PawsAndCare</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap 5.3.3 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION — Services link active
+  ══════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <i class="fa-solid fa-paw me-2"></i>PawsAndCare
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="exotic.html">Exotic Pets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-cta" href="book.html">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       PAGE HERO — Title + Subtitle
+  ══════════════════════════════════════════ -->
+  <section class="services-hero">
+    <div class="container text-center">
+      <h1 class="section-title">Our Services</h1>
+      <p class="section-subtitle">
+        Comprehensive veterinary and pet care for dogs, cats, and exotic animals in Dublin
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FILTER PILLS — All / Dogs / Cats / Exotic
+  ══════════════════════════════════════════ -->
+  <section class="services-filter-section">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center gap-2" id="filterPills" role="group" aria-label="Filter services by pet type">
+        <button class="filter-pill active" data-filter="all">
+          <i class="fa-solid fa-layer-group me-1"></i>All
+        </button>
+        <button class="filter-pill" data-filter="dogs">
+          <i class="fa-solid fa-dog me-1"></i>Dogs
+        </button>
+        <button class="filter-pill" data-filter="cats">
+          <i class="fa-solid fa-cat me-1"></i>Cats
+        </button>
+        <button class="filter-pill" data-filter="exotic">
+          <i class="fa-solid fa-dragon me-1"></i>Exotic
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERVICE CARDS — 6 cards, col-md-4
+  ══════════════════════════════════════════ -->
+  <section class="services-grid-section">
+    <div class="container">
+      <div class="row g-4" id="servicesGrid">
+
+        <!-- 1. General Consultation — dogs, cats, exotic -->
+        <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats,exotic">
+          <div class="service-card text-center h-100">
+            <div class="service-icon">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h5>General Consultation</h5>
+            <p>A thorough health assessment by one of our experienced vets covering diagnosis, treatment plans, and preventive advice.</p>
+            <span class="badge service-price-badge">€55</span>
+          </div>
+        </div>
+
+        <!-- 2. Vaccination Package — dogs, cats -->
+        <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats">
+          <div class="service-card text-center h-100">
+            <div class="service-icon">
+              <i class="fa-solid fa-syringe"></i>
+            </div>
+            <h5>Vaccination Package</h5>
+            <p>Keep your pet protected with our comprehensive vaccination packages, tailored to your pet's age and lifestyle.</p>
+            <span class="badge service-price-badge">€75</span>
+          </div>
+        </div>
+
+        <!-- 3. Full Grooming — dogs, cats -->
+        <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats">
+          <div class="service-card text-center h-100">
+            <div class="service-icon">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h5>Full Grooming</h5>
+            <p>Bath, blow-dry, brushing, nail trim, ear cleaning, and breed-specific styling performed by certified groomers.</p>
+            <span class="badge service-price-badge">€45</span>
+          </div>
+        </div>
+
+        <!-- 4. Dental Cleaning — dogs, cats -->
+        <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats">
+          <div class="service-card text-center h-100">
+            <div class="service-icon">
+              <i class="fa-solid fa-tooth"></i>
+            </div>
+            <h5>Dental Cleaning</h5>
+            <p>Professional ultrasonic scaling and polishing under light sedation to prevent periodontal disease and bad breath.</p>
+            <span class="badge service-price-badge">€120</span>
+          </div>
+        </div>
+
+        <!-- 5. Emergency Care — dogs, cats, exotic -->
+        <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats,exotic">
+          <div class="service-card text-center h-100">
+            <div class="service-icon">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <h5>Emergency Care</h5>
+            <p>24/7 emergency services staffed by specialist vets. Immediate triage, stabilisation, and critical care for all pets.</p>
+            <span class="badge service-price-badge">€150</span>
+          </div>
+        </div>
+
+        <!-- 6. Wellness Plan — dogs, cats, exotic -->
+        <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats,exotic">
+          <div class="service-card text-center h-100">
+            <div class="service-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h5>Wellness Plan</h5>
+            <p>Monthly subscription covering routine check-ups, vaccinations, flea/worm treatment, and discounts on other services.</p>
+            <span class="badge service-price-badge">€35/mo</span>
+          </div>
+        </div>
+
+      </div><!-- /.row -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PRICING ESTIMATOR — Static, cream bg
+  ══════════════════════════════════════════ -->
+  <section class="cream-bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+
+          <h2 class="section-title text-center">Pricing Estimator</h2>
+          <p class="section-subtitle text-center mb-4">
+            Select the services you need to get an instant cost estimate
+          </p>
+
+          <div class="estimator-box">
+            <!-- Service checkboxes -->
+            <div class="estimator-list">
+
+              <div class="form-check estimator-row">
+                <input class="form-check-input" type="checkbox" id="est-consultation" data-price="55">
+                <label class="form-check-label estimator-label" for="est-consultation">
+                  <span>General Consultation</span>
+                  <span class="estimator-price">€55</span>
+                </label>
+              </div>
+
+              <div class="form-check estimator-row">
+                <input class="form-check-input" type="checkbox" id="est-vaccination" data-price="75">
+                <label class="form-check-label estimator-label" for="est-vaccination">
+                  <span>Vaccination Package</span>
+                  <span class="estimator-price">€75</span>
+                </label>
+              </div>
+
+              <div class="form-check estimator-row">
+                <input class="form-check-input" type="checkbox" id="est-grooming" data-price="45">
+                <label class="form-check-label estimator-label" for="est-grooming">
+                  <span>Full Grooming</span>
+                  <span class="estimator-price">€45</span>
+                </label>
+              </div>
+
+              <div class="form-check estimator-row">
+                <input class="form-check-input" type="checkbox" id="est-dental" data-price="120">
+                <label class="form-check-label estimator-label" for="est-dental">
+                  <span>Dental Cleaning</span>
+                  <span class="estimator-price">€120</span>
+                </label>
+              </div>
+
+              <div class="form-check estimator-row">
+                <input class="form-check-input" type="checkbox" id="est-emergency" data-price="150">
+                <label class="form-check-label estimator-label" for="est-emergency">
+                  <span>Emergency Care</span>
+                  <span class="estimator-price">€150</span>
+                </label>
+              </div>
+
+              <div class="form-check estimator-row">
+                <input class="form-check-input" type="checkbox" id="est-wellness" data-price="35">
+                <label class="form-check-label estimator-label" for="est-wellness">
+                  <span>Wellness Plan <small class="text-muted">(per month)</small></span>
+                  <span class="estimator-price">€35</span>
+                </label>
+              </div>
+
+            </div><!-- /.estimator-list -->
+
+            <!-- Total row -->
+            <div class="estimator-total-row">
+              <span class="estimator-total-label">Estimated Total</span>
+              <span class="estimator-total-value" id="estimatorTotal">€0</span>
+            </div>
+
+          </div><!-- /.estimator-box -->
+
+          <p class="text-center mt-3" style="font-size: 0.85rem; color: var(--text-color-muted);">
+            Prices are indicative. Final cost confirmed at consultation. VAT may apply.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand -->
+        <div class="col-md-4">
+          <h5 class="footer-brand"><i class="fa-solid fa-paw me-2"></i>PawsAndCare</h5>
+          <p>Expert veterinary care for all your pets in Dublin. Compassionate, professional, and always here for you.</p>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-md-4">
+          <h6 class="footer-heading">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a href="exotic.html">Exotic Pets</a></li>
+            <li><a href="book.html">Book Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Contact Info -->
+        <div class="col-md-4">
+          <h6 class="footer-heading">Contact Us</h6>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot me-2"></i>123 Pet Street, Dublin 2, Ireland</li>
+            <li><i class="fa-solid fa-phone me-2"></i>+353 1 234 5678</li>
+            <li><i class="fa-solid fa-envelope me-2"></i>info@pawsandcare.ie</li>
+          </ul>
+          <div class="footer-socials mt-3">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="text-center mb-0">&copy; 2026 PawsAndCare.ie — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Page-specific JS (Phase 3) -->
+  <script src="../js/services.js"></script>
+
+</body>
+</html>
