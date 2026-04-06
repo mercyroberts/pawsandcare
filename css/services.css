@@ -88,8 +88,8 @@
 }
 .estimator-row .form-check-input {
   flex-shrink: 0;
-  float: none;        /* reset Bootstrap's float: left */
-  margin-left: 0;     /* reset Bootstrap's margin-left: -1.5em */
+  float: none; /* reset Bootstrap's float: left */
+  margin-left: 0; /* reset Bootstrap's margin-left: -1.5em */
   width: 1.1em;
   height: 1.1em;
   margin-top: 0;
