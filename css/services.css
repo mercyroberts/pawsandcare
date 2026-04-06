@@ -1,0 +1,138 @@
+/* ══════════════════════════════════════════
+   SERVICES PAGE — services.css
+   ══════════════════════════════════════════ */
+
+/* ── Services Hero ── */
+.services-hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
+  padding: 4rem 0 3rem;
+}
+.services-hero .section-title,
+.services-hero .section-subtitle {
+  color: #fff;
+}
+.services-hero .section-subtitle {
+  opacity: 0.85;
+}
+
+/* ── Filter Pills ── */
+.services-filter-section {
+  padding: 2rem 0 0;
+}
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--radius-button);
+  border: 2px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-default),
+    color var(--transition-default);
+}
+.filter-pill:hover {
+  background-color: var(--primary-color-light);
+}
+.filter-pill.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* ── Services Grid ── */
+.services-grid-section {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+/* ── Price Badge ── */
+.service-price-badge {
+  display: inline-block;
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+}
+
+/* ── Estimator Box ── */
+.estimator-box {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.estimator-list {
+  padding: 0.25rem 0;
+}
+.estimator-row {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+}
+.estimator-row:last-child {
+  border-bottom: none;
+}
+.estimator-row .form-check-input {
+  flex-shrink: 0;
+  float: none;        /* reset Bootstrap's float: left */
+  margin-left: 0;     /* reset Bootstrap's margin-left: -1.5em */
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+.estimator-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-left: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.estimator-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-color-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+/* ── Estimator Total Row ── */
+.estimator-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-color-light);
+  border-top: 2px solid var(--primary-color);
+}
+.estimator-total-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+.estimator-total-value {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
