@@ -1,6 +1,18 @@
-/* ── Google Fonts ── */
+/* ══════════════════════════════════════════
+   styles.css — Shared styles for PawsAndCare
+   This file contains the global styles used across every page:
+   fonts, design tokens (CSS variables), base resets, navbar, CTA button, and footer.
+   Page-specific styles live in their own files (index.css, book.css, exotic.css).
+   ══════════════════════════════════════════ */
+
+/* ── Google Fonts ──
+   Poppins for headings (bold and modern), Nunito for body text (rounded and friendly)
+   Loaded via @import so I don't need extra <link> tags in every HTML file */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap");
 
+/* ── Design Tokens ──
+   All the brand colours, fonts, spacing and transitions live here as CSS variables
+   I followed the naming convention from our wireframe: teal primary, coral accent, warm cream backgrounds */
 :root {
   /* ── Colours ── */
   --primary-color: #0b6e6e; /* Deep Teal — navbar, headings, icons */
@@ -26,14 +38,18 @@
   --transition-default: 0.2s ease;
 }
 
-/* ── Base Resets ── */
+/* ── Base Resets ──
+   I reset margin and padding on everything so I have full control over spacing
+   box-sizing: border-box means padding doesn't add to the element's width which makes layouts way easier */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ── Base Typography ── */
+/* ── Base Typography ──
+   Nunito as the body font gives the site a friendly, approachable feel
+   line-height 1.7 for good readability on longer text blocks */
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -42,16 +58,19 @@ body {
   background-color: var(--background-primary);
 }
 
+/* All headings use Poppins for visual contrast against body text */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-color);
 }
 
+/* Stop images from overflowing their containers */
 img {
   max-width: 100%;
   display: block;
 }
 
+/* Links inherit colour from their parent by default, turn coral on hover */
 a {
   color: inherit;
   text-decoration: none;
@@ -61,21 +80,25 @@ a:hover {
   color: var(--accent-color);
 }
 
+/* Remove default bullet points — I use Font Awesome icons or custom styles instead */
 ul, ol {
   list-style: none;
 }
 
-/* ── Section Spacing ── */
+/* ── Section Spacing ──
+   Every <section> gets uniform vertical padding so the page has consistent breathing room */
 section {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
-/* ── Utility Classes ── */
+/* ── Utility Classes ──
+   .cream-bg is used on alternating sections (stats bar, why choose us) to break up the white */
 .cream-bg {
   background-color: var(--background-secondary);
 }
 
+/* Shared heading styles used across all section titles */
 .section-title {
   font-size: 1.75rem;
   font-weight: 700;
@@ -90,6 +113,8 @@ section {
 
 /* ══════════════════════════════════════════
    NAVBAR
+   The navbar uses my teal brand colour and becomes darker when you scroll down
+   main.js adds the .scrolled class after 50px of scrolling
    ══════════════════════════════════════════ */
 #mainNav {
   background-color: var(--primary-color);
@@ -97,6 +122,7 @@ section {
   padding: 0.8rem 0;
 }
 
+/* Darker background + subtle shadow when scrolled — makes it feel more solid over content */
 #mainNav.scrolled {
   background-color: var(--primary-color-dark);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
@@ -108,6 +134,7 @@ section {
   color: #fff;
 }
 
+/* Nav links are slightly transparent white by default, fully white on hover/active */
 #mainNav .nav-link {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
@@ -115,12 +142,20 @@ section {
   transition: color var(--transition-default);
 }
 
-#mainNav .nav-link:hover,
-#mainNav .nav-link.active {
+#mainNav .nav-link:hover {
   color: #fff;
 }
 
-/* ── CTA Button (shared across site) ── */
+/* Active nav link gets a coral underline so you can tell which page you're on */
+#mainNav .nav-link.active {
+  color: #fff;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.35rem;
+}
+
+/* ── CTA Button (shared across every page) ──
+   The coral "Book Now" button used in the navbar, hero, booking form, quiz result etc.
+   translateY(-2px) on hover gives it a subtle lift effect so it feels clickable */
 .btn-cta {
   background-color: var(--accent-color);
   color: #fff;
@@ -138,591 +173,15 @@ section {
   transform: translateY(-2px);
 }
 
+/* Remove the lift on click so it feels like a real button press */
 .btn-cta:active {
   transform: translateY(0);
 }
 
 /* ══════════════════════════════════════════
-   HERO SECTION (index.html)
-   ══════════════════════════════════════════ */
-.hero-section {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
-  color: #fff;
-  padding: 5rem 0;
-}
-
-.hero-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0.75;
-  margin-bottom: 1rem;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.85;
-  margin-bottom: 2rem;
-  max-width: 500px;
-}
-
-.hero-image {
-  border-radius: var(--radius-card);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 991.98px) {
-  .hero-title {
-    font-size: 1.8rem;
-  }
-  .hero-section {
-    padding: 3rem 0;
-    text-align: center;
-  }
-  .hero-subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* ══════════════════════════════════════════
-   STATS BAR (index.html)
-   ══════════════════════════════════════════ */
-.stats-section {
-  padding: 3rem 0;
-}
-
-.stat-number {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--primary-color);
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  color: var(--text-color-muted);
-}
-
-/* ══════════════════════════════════════════
-   SERVICE CARDS (index.html)
-   ══════════════════════════════════════════ */
-.service-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: var(--radius-card);
-  padding: 1.5rem 1rem;
-  transition: transform var(--transition-default), box-shadow var(--transition-default);
-  height: 100%;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-.service-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--primary-color-light);
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  margin: 0 auto 1rem;
-}
-
-.service-card h5 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.service-card p {
-  font-size: 0.875rem;
-  color: var(--text-color-muted);
-}
-
-.service-price {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--primary-color);
-  font-size: 0.9rem;
-}
-
-/* ══════════════════════════════════════════
-   WHY CHOOSE US (index.html)
-   ══════════════════════════════════════════ */
-.why-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.why-number {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.why-item h5 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.why-item p {
-  font-size: 0.875rem;
-  color: var(--text-color-muted);
-  margin-bottom: 0;
-}
-
-/* ══════════════════════════════════════════
-   TESTIMONIALS CAROUSEL (index.html)
-   ══════════════════════════════════════════ */
-.testimonial-carousel {
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.testimonial-card {
-  display: none;
-  background: #fff;
-  border-left: 4px solid var(--accent-color);
-  border-radius: var(--radius-card);
-  padding: 2rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-
-.testimonial-card.active {
-  display: block;
-}
-
-.testimonial-text {
-  font-size: 1.05rem;
-  font-style: italic;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.testimonial-author {
-  font-weight: 700;
-  color: var(--text-color-muted);
-}
-
-.testimonial-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.testimonial-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-  background: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-default);
-}
-
-.testimonial-btn:hover {
-  background-color: var(--primary-color-light);
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
-.testimonial-dots {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ddd;
-  cursor: pointer;
-  transition: background var(--transition-default);
-}
-
-.dot.active {
-  background: var(--primary-color);
-}
-
-/* ══════════════════════════════════════════
-   BOOKING FORM (book.html)
-   ══════════════════════════════════════════ */
-.booking-section {
-  padding-top: 3rem;
-}
-
-.form-section {
-  background: var(--background-secondary);
-  border-radius: var(--radius-card);
-  padding: 1.5rem;
-}
-
-.form-section-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-}
-
-.booking-form .form-control,
-.booking-form .form-select {
-  border-radius: var(--radius-input);
-  border: 1px solid #ddd;
-  padding: 0.6rem 0.9rem;
-  transition: border-color var(--transition-default), box-shadow var(--transition-default);
-}
-
-.booking-form .form-control:focus,
-.booking-form .form-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
-}
-
-.booking-form .form-control.is-valid,
-.booking-form .form-select.is-valid {
-  border-color: #28a745;
-}
-
-.booking-form .form-control.is-invalid,
-.booking-form .form-select.is-invalid {
-  border-color: #dc3545;
-}
-
-.booking-form .form-label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
-}
-
-/* ── Time Slot Buttons ── */
-.time-slots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.time-slot-btn {
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  border: 1px solid var(--primary-color);
-  background: var(--primary-color-light);
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all var(--transition-default);
-}
-
-.time-slot-btn:hover:not(.taken) {
-  background: var(--primary-color);
-  color: #fff;
-}
-
-.time-slot-btn.selected {
-  background: var(--primary-color);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(11, 110, 110, 0.3);
-}
-
-.time-slot-btn.taken {
-  background: #eee;
-  color: #aaa;
-  border-color: #ddd;
-  cursor: not-allowed;
-  text-decoration: line-through;
-}
-
-/* ── Booking Confirmation ── */
-.booking-confirmation {
-  background: var(--primary-color-light);
-  border-left: 4px solid var(--primary-color);
-  border-radius: var(--radius-card);
-  padding: 1.5rem;
-}
-
-/* ══════════════════════════════════════════
-   EXOTIC PAGE (exotic.html)
-   ══════════════════════════════════════════ */
-
-/* ── Exotic Hero ── */
-.exotic-hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
-  color: #fff;
-  padding: 4rem 0 3rem;
-}
-
-.exotic-hero .section-title,
-.exotic-hero .section-subtitle {
-  color: #fff;
-}
-
-.exotic-hero .section-subtitle {
-  opacity: 0.85;
-}
-
-/* ── Bootstrap Accordion Customisation ── */
-.accordion-item {
-  border: 1px solid #eee;
-  margin-bottom: 0;
-}
-
-.accordion-button {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--text-color);
-  background: #f8f8f8;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: var(--primary-color);
-  color: #fff;
-  box-shadow: none;
-}
-
-.accordion-button:not(.collapsed)::after {
-  filter: brightness(100);
-}
-
-.accordion-button:focus {
-  box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
-}
-
-.accordion-body {
-  background: var(--background-secondary);
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-/* ── Specialist Cards ── */
-.specialist-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: var(--radius-card);
-  padding: 1.5rem;
-  transition: transform var(--transition-default), box-shadow var(--transition-default);
-  height: 100%;
-}
-
-.specialist-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-.specialist-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--primary-color-light);
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin: 0 auto 0.75rem;
-}
-
-.specialist-role {
-  display: inline-block;
-  background: var(--accent-color-light);
-  color: var(--accent-color);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.2rem 0.75rem;
-  border-radius: 4px;
-}
-
-.specialist-card p {
-  font-size: 0.875rem;
-  color: var(--text-color-muted);
-}
-
-/* ── Care Tips Cards ── */
-.care-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: var(--radius-card);
-  padding: 1.5rem;
-  transition: transform var(--transition-default);
-  height: 100%;
-}
-
-.care-card:hover {
-  transform: translateY(-4px);
-}
-
-.care-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--primary-color-light);
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  margin: 0 auto 1rem;
-}
-
-.care-card p {
-  font-size: 0.875rem;
-  color: var(--text-color-muted);
-}
-
-/* ── Pet Quiz ── */
-.quiz-container {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: var(--radius-card);
-  padding: 2rem;
-}
-
-.quiz-step {
-  display: none;
-}
-
-.quiz-step.active {
-  display: block;
-}
-
-.quiz-question {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.quiz-option {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--background-secondary);
-  border: 2px solid transparent;
-  border-radius: var(--radius-input);
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  transition: border-color var(--transition-default), background-color var(--transition-default);
-}
-
-.quiz-option:hover {
-  border-color: var(--primary-color-light);
-}
-
-.quiz-option:has(input:checked) {
-  border-color: var(--primary-color);
-  background: var(--primary-color-light);
-}
-
-.quiz-option input[type="radio"] {
-  accent-color: var(--primary-color);
-}
-
-.quiz-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.quiz-progress {
-  font-size: 0.85rem;
-  color: var(--text-color-muted);
-}
-
-/* ── Quiz Result Card ── */
-.quiz-result-card {
-  text-align: center;
-  padding: 2rem;
-}
-
-.quiz-result-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: var(--primary-color-light);
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  margin: 0 auto 1rem;
-}
-
-.quiz-result-card h4 {
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-.quiz-result-card p {
-  color: var(--text-color-muted);
-  max-width: 500px;
-  margin: 0.5rem auto 0;
-}
-
-/* ── Quiz Shake Animation (validation nudge) ── */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
-}
-
-.shake {
-  animation: shake 0.3s ease;
-}
-
-/* ── Disclaimer Banner ── */
-.disclaimer {
-  background: var(--accent-color-light);
-  color: #c44;
-  border-left: 4px solid var(--accent-color);
-  border-radius: var(--radius-card);
-  padding: 1rem 1.25rem;
-  font-size: 0.9rem;
-  text-align: left;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ══════════════════════════════════════════
    FOOTER
+   Dark charcoal background with 3 columns: brand info, quick links, contact
+   Same footer is used on every page — paths are adjusted with ../ on pages in the pages/ folder
    ══════════════════════════════════════════ */
 .site-footer {
   background-color: var(--text-color);
@@ -751,6 +210,7 @@ section {
   margin-bottom: 0.4rem;
 }
 
+/* Footer links turn coral on hover for consistency with other links on the site */
 .footer-links a {
   font-size: 0.9rem;
   transition: color var(--transition-default);
@@ -765,6 +225,7 @@ section {
   margin-bottom: 0.5rem;
 }
 
+/* Social media icons in circular buttons — semi-transparent white bg, coral on hover */
 .footer-socials a {
   display: inline-flex;
   align-items: center;
@@ -783,6 +244,7 @@ section {
   color: #fff;
 }
 
+/* Subtle divider line above the copyright text */
 .footer-divider {
   border-color: rgba(255, 255, 255, 0.15);
   margin: 2rem 0 1rem;

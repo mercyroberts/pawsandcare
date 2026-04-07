@@ -1,0 +1,262 @@
+/* ══════════════════════════════════════════
+   index.css — Home page styles
+   Styles specific to index.html: hero banner, stats counter bar,
+   service cards, why choose us section, and testimonial carousel
+   ══════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════
+   HERO SECTION
+   Full-width teal gradient banner — the first thing visitors see
+   Text on the left, dog image on the right (2-column Bootstrap grid)
+   ══════════════════════════════════════════ */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+  color: #fff;
+  padding: 5rem 0;
+}
+
+/* Small caps label above the main heading for extra visual hierarchy */
+.hero-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* max-width stops the subtitle from stretching too wide on large screens */
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-image {
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* On mobile: shrink the heading, centre everything, and centre the subtitle
+   This stops the hero from feeling too cramped on smaller screens */
+@media (max-width: 991.98px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-section {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ══════════════════════════════════════════
+   STATS BAR
+   The 4 animated counters (Pets Treated, Specialist Vets, Years Open, Google Rating)
+   main.js uses IntersectionObserver to trigger the count-up when this section scrolls into view
+   ══════════════════════════════════════════ */
+.stats-section {
+  padding: 3rem 0;
+}
+
+/* Big bold teal numbers — Poppins font makes them feel impactful */
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+}
+
+/* ══════════════════════════════════════════
+   SERVICE CARDS
+   6 cards in a 3x2 grid (2x3 on mobile) showing what the clinic offers
+   Each card lifts up on hover with a shadow for a nice interactive feel
+   ══════════════════════════════════════════ */
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1rem;
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Circular teal icon backgrounds — consistent look across all service cards */
+.service-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem;
+}
+
+.service-card h5 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+}
+
+/* Price label at the bottom of each card — teal and bold to stand out */
+.service-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* ══════════════════════════════════════════
+   WHY CHOOSE US
+   4 numbered reasons in a 2x2 grid, each with a circular teal badge
+   Layout uses flexbox so the number circle and text sit side by side
+   ══════════════════════════════════════════ */
+.why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Circular numbered badge — flex-shrink: 0 stops it from squishing when text is long */
+.why-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.why-item h5 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.why-item p {
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+  margin-bottom: 0;
+}
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS CAROUSEL
+   Custom-built carousel instead of Bootstrap's — I wanted more control over
+   the coral left border, fade effect, and the dot indicators
+   main.js handles auto-rotation every 4 seconds and prev/next button logic
+   ══════════════════════════════════════════ */
+.testimonial-carousel {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Cards are hidden by default, .active shows the current one
+   The coral left border is the key visual detail from the wireframe */
+.testimonial-card {
+  display: none;
+  background: #fff;
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-card.active {
+  display: block;
+}
+
+/* Italic text gives it that classic testimonial/quote feel */
+.testimonial-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--text-color-muted);
+}
+
+/* Controls: prev button, dots, next button — centred below the testimonial card */
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Circular prev/next buttons with a hover effect that matches the teal theme */
+.testimonial-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-default);
+}
+
+.testimonial-btn:hover {
+  background-color: var(--primary-color-light);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.testimonial-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Small grey dots that turn teal when active — shows which testimonial is visible */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background var(--transition-default);
+}
+
+.dot.active {
+  background: var(--primary-color);
+}
