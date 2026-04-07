@@ -1,0 +1,99 @@
+/* ══════════════════════════════════════════
+   TEAM PAGE — team.css
+   Styles specific to team.html
+   ══════════════════════════════════════════ */
+
+/* ── Team Hero ── */
+.team-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+    padding: 4rem 0 3rem;
+}
+.team-hero .section-title,
+.team-hero .section-subtitle {
+    color: #fff;
+}
+.team-hero .section-subtitle {
+    opacity: 0.85;
+}
+
+/* ── Team Section ── */
+.team-section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+/* ── Search Bar ── */
+.team-search-wrapper .input-group-text {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    border-right: none;
+}
+.team-search-wrapper .form-control {
+    border: 1px solid var(--primary-color);
+    border-left: none;
+    border-radius: 0 var(--radius-button) var(--radius-button) 0;
+    padding: 0.6rem 1rem;
+    font-family: var(--font-body);
+}
+.team-search-wrapper .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
+    border-color: var(--primary-color);
+}
+.team-search-wrapper .input-group-text {
+    border-radius: var(--radius-button) 0 0 var(--radius-button);
+}
+
+/* ── Team Card ── */
+.team-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: var(--radius-card);
+    padding: 2rem 1.25rem 1.5rem;
+    text-align: center;
+    transition: transform var(--transition-default), box-shadow var(--transition-default);
+    height: 100%;
+}
+.team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Avatar ── */
+.team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: var(--primary-color-light);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 auto 1rem;
+}
+
+/* ── Role Badge ── */
+.team-role-badge {
+    display: inline-block;
+    background-color: var(--accent-color-light);
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+}
+
+/* ── Bio ── */
+.team-bio {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
