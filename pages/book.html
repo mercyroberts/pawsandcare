@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a veterinary appointment at PawsAndCare.ie — easy online booking for dogs, cats, and exotic pets.">
+  <meta name="keywords" content="vet appointment, book vet, Dublin, PawsAndCare, pet booking">
+  <title>Book an Appointment — PawsAndCare</title>
+
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <i class="fa-solid fa-paw me-2"></i>PawsAndCare
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="exotic.html">Exotic Pets</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-cta active" href="book.html">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       BOOKING FORM
+  ══════════════════════════════════════════ -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h1 class="section-title text-center">Book an Appointment</h1>
+          <p class="section-subtitle text-center">Fill in the details below and we'll confirm your slot by email.</p>
+
+          <form id="bookingForm" class="booking-form mt-4" novalidate>
+            <div class="row g-4">
+
+              <!-- ── Pet Details ── -->
+              <div class="col-md-6">
+                <div class="form-section">
+                  <h5 class="form-section-title">
+                    <i class="fa-solid fa-paw me-2"></i>Pet Details
+                  </h5>
+
+                  <div class="mb-3">
+                    <label for="petName" class="form-label">Pet Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="petName" placeholder="e.g. Buddy" required>
+                    <div class="invalid-feedback">Please enter your pet's name.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="petType" class="form-label">Pet Type <span class="text-danger">*</span></label>
+                    <select class="form-select" id="petType" required>
+                      <option value="" disabled selected>Select pet type</option>
+                      <option value="dog">Dog</option>
+                      <option value="cat">Cat</option>
+                      <option value="exotic">Exotic</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your pet type.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="service" class="form-label">Service <span class="text-danger">*</span></label>
+                    <select class="form-select" id="service" required>
+                      <option value="" disabled selected>Select a service</option>
+                      <option value="consultation">Consultation — €35</option>
+                      <option value="vaccination">Vaccination — €50</option>
+                      <option value="grooming">Grooming — €45</option>
+                      <option value="emergency">Emergency Care — €150</option>
+                      <option value="dental">Dental Care — €80</option>
+                      <option value="wellness">Wellness Plan — €60</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a service.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── Owner Details ── -->
+              <div class="col-md-6">
+                <div class="form-section">
+                  <h5 class="form-section-title">
+                    <i class="fa-solid fa-user me-2"></i>Owner Details
+                  </h5>
+
+                  <div class="mb-3">
+                    <label for="ownerName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="ownerName" placeholder="John Smith" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="ownerEmail" class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="ownerEmail" placeholder="john@email.com" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="ownerPhone" class="form-label">Phone <span class="text-danger">*</span></label>
+                    <input type="tel" class="form-control" id="ownerPhone" placeholder="+353 87 123 4567" required>
+                    <div class="invalid-feedback">Please enter a valid phone number (e.g. +353 87 123 4567).</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Date & Time ── -->
+            <div class="form-section mt-4">
+              <h5 class="form-section-title">
+                <i class="fa-solid fa-calendar-days me-2"></i>Date & Time
+              </h5>
+
+              <div class="row align-items-start">
+                <div class="col-md-4 mb-3">
+                  <label for="appointmentDate" class="form-label">Select Date <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" id="appointmentDate" required>
+                  <div class="invalid-feedback">Please select a date.</div>
+                </div>
+                <div class="col-md-8 mb-3">
+                  <label class="form-label">Available Time Slots</label>
+                  <div id="timeSlots" class="time-slots">
+                    <p class="text-muted small">Select a date to see available slots.</p>
+                  </div>
+                  <input type="hidden" id="selectedTime" required>
+                  <div class="invalid-feedback d-block" id="timeError" style="display:none!important;">Please select a time slot.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Submit ── -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-cta btn-lg px-5">
+                <i class="fa-solid fa-check me-2"></i>Confirm Booking
+              </button>
+            </div>
+          </form>
+
+          <!-- ── Confirmation (hidden by default, shown by JS) ── -->
+          <div id="bookingConfirmation" class="booking-confirmation mt-4" style="display:none;">
+            <div class="d-flex align-items-start">
+              <i class="fa-solid fa-circle-check fa-2x me-3 text-success"></i>
+              <div>
+                <h5 class="mb-1">Booking Confirmed!</h5>
+                <p id="confirmationDetails" class="mb-1"></p>
+                <small class="text-muted">Your appointment has been saved. We'll send a confirmation email shortly.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="footer-brand"><i class="fa-solid fa-paw me-2"></i>PawsAndCare</h5>
+          <p>Expert veterinary care for all your pets in Dublin.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="footer-heading">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="exotic.html">Exotic Pets</a></li>
+            <li><a href="book.html">Book Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="footer-heading">Contact Us</h6>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot me-2"></i>123 Pet Street, Dublin 2, Ireland</li>
+            <li><i class="fa-solid fa-phone me-2"></i>+353 1 234 5678</li>
+            <li><i class="fa-solid fa-envelope me-2"></i>info@pawsandcare.ie</li>
+          </ul>
+          <div class="footer-socials mt-3">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="text-center mb-0">&copy; 2026 PawsAndCare.ie — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/book.js"></script>
+</body>
+</html>
