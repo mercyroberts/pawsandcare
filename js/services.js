@@ -9,7 +9,7 @@
      and cards by #servicesGrid container.
   ───────────────────────────────────── */
 
-  const filterPills  = document.querySelectorAll('#filterPills .filter-pill');
+  const filterPills  = document.querySelectorAll('#filterPills .filter');
   const serviceItems = document.querySelectorAll('#servicesGrid .service-item');
 
   function filterServices(category) {

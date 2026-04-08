@@ -103,8 +103,8 @@
          Four toggle buttons that moves the JS category filter.
          Each button has a data-filter attribute that maps
          to the data-category values on service cards below.
-         The "All" pill starts active (class="filter-pill active").
-         JS hook: services.js reads #filterPills .filter-pill.
+         The "All" pill starts active (class="filter active").
+         JS hook: services.js reads #filterPills .filter.
          Once the user clicks the button this is gonna remove 
          the class active and filter it as the user selects different options.-->
     <section class="services-filter-section">
@@ -116,19 +116,19 @@
           aria-label="Filter services by pet type"
         >
           <!-- data-filter="all" → shows all service cards -->
-          <button class="filter-pill active" data-filter="all">
+          <button class="filter active" data-filter="all">
             <i class="fa-solid fa-layer-group me-1"></i>All
           </button>
           <!-- data-filter="dogs" → shows only cards containing "dogs" in data-category -->
-          <button class="filter-pill" data-filter="dogs">
+          <button class="filter" data-filter="dogs">
             <i class="fa-solid fa-dog me-1"></i>Dogs
           </button>
           <!-- data-filter="cats" → shows only cards containing "cats" in data-category -->
-          <button class="filter-pill" data-filter="cats">
+          <button class="filter" data-filter="cats">
             <i class="fa-solid fa-cat me-1"></i>Cats
           </button>
           <!-- data-filter="exotic" → shows only cards containing "exotic" in data-category -->
-          <button class="filter-pill" data-filter="exotic">
+          <button class="filter" data-filter="exotic">
             <i class="fa-solid fa-dragon me-1"></i>Exotic
           </button>
         </div>
