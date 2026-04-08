@@ -1,8 +1,6 @@
-/* ══════════════════════════════════════════
-   SERVICES PAGE — services.css
-   ══════════════════════════════════════════ */
+/* SERVICES PAGE - services.css*/
 
-/* ── Services Hero ── */
+/* Services Hero */
 .services-hero {
   background: linear-gradient(
     135deg,
@@ -19,7 +17,7 @@
   opacity: 0.85;
 }
 
-/* ── Filter Pills ── */
+/* Filter Pills */
 .services-filter-section {
   padding: 2rem 0 0;
 }
@@ -47,13 +45,13 @@
   color: #fff;
 }
 
-/* ── Services Grid ── */
+/* Services Grid */
 .services-grid-section {
   padding-top: 2rem;
   padding-bottom: 5rem;
 }
 
-/* ── Price Badge ── */
+/* Price Badge */
 .service-price-badge {
   display: inline-block;
   background-color: var(--primary-color-light);
@@ -66,7 +64,7 @@
   margin-top: 0.5rem;
 }
 
-/* ── Estimator Box ── */
+/* Estimator Box */
 .estimator-box {
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -86,10 +84,13 @@
 .estimator-row:last-child {
   border-bottom: none;
 }
+/* Form check input
+  Reset Bootstrap's float: left and margin-left: -1.5em to remove the default styling.
+*/
 .estimator-row .form-check-input {
   flex-shrink: 0;
-  float: none; /* reset Bootstrap's float: left */
-  margin-left: 0; /* reset Bootstrap's margin-left: -1.5em */
+  float: none;
+  margin-left: 0;
   width: 1.1em;
   height: 1.1em;
   margin-top: 0;
@@ -115,7 +116,7 @@
   margin-left: 1rem;
 }
 
-/* ── Estimator Total Row ── */
+/* Estimator Total Row */
 .estimator-total-row {
   display: flex;
   justify-content: space-between;
