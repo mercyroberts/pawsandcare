@@ -1,0 +1,340 @@
+/* ════
+   index.css — Home page styles
+   All the styles that only apply to index.html live here:
+   hero banner with the image slider, the animated stats bar,
+   the 6 service cards, why choose us badges, and my custom review carousel.
+   I separated this from styles.css so each page has its own CSS file,
+   same way Joao set up his pages.
+   ════ */
+
+/* ════
+   HERO SECTION
+   This is the big teal gradient banner at the top of the page,
+   the first thing visitors see.
+   Two shades of teal were used  for depth.
+  
+   var() is how I use CSS variables it pulls the value I defined in in styles.css
+   So var(--primary-color) gives me #0b6e6e (teal) without having to type the hex code every time.
+   If I ever want to change the brand colour I just update it once in the :root and it changes everywhere */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
+  color: #fff;
+  padding: 5rem 0;
+}
+
+/* This is the small "CARING FOR YOUR PETS" label above the main heading
+   opacity: 0.75 makes it slightly faded so it doesn't compete with the main heading */
+.hero-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+/* The main hero heading 2.5rem is big enough to grab attention
+   font-weight 800 (extra bold) because this is the most important text on the page */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* The paragraph below the heading  max-width: 500px stops it from stretching
+   across the whole column which would make it hard to read on wide screens */
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* Shared style for all hero images — rounded corners and a strong shadow
+   to make the image pop against the teal gradient background */
+.hero-image {
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive adjustments for mobile screens (below 992px which is Bootstrap's lg breakpoint)
+   I shrink the heading, centre everything, and auto-centre the subtitle
+   so the hero doesn't look cramped on phones */
+@media (max-width: 991.98px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-section {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ── Hero Image Slider ──
+   I wanted to show multiple pet photos in the hero instead of just one image
+   so I built a simple slider that fades between them every 3 seconds.
+   The slides are all stacked on top of each other with position: absolute,
+   and only the one with .active gets opacity: 1. The code in main.js handles the rotation.
+   aspect-ratio: 4/3 keeps the container a consistent size so it doesn't overflow
+   into the stats section below  this was a bug I had to fix */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  aspect-ratio: 4 / 3;
+}
+
+/* Each slide is positioned on top of each other (absolute) and starts invisible (opacity: 0)
+   object-fit: cover makes sure the image fills the whole container without stretching
+   width and height 100% so every image is the same size regardless of original dimensions
+   the 0.8s transition gives a smooth fade when main.js swaps the .active class */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* The active slide becomes fully visible and sits on top (z-index: 1) */
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ════
+   STATS BAR
+   The row of 4 numbers that count up when you scroll down to them
+   (500+ Pets Treated, 12+ Specialist Vets, 10+ Years Open, 4.9★ Google Rating)
+   The counting animation is triggered by IntersectionObserver in main.js
+   which detects when this section becomes visible on screen
+   ════ */
+.stats-section {
+  padding: 3rem 0;
+}
+
+/* The big numbers  I used Poppins (the heading font) at 2rem and extra bold
+   so they really stand out. The teal colour ties them to the brand */
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* The labels underneath each number (e.g. "Pets Treated") smaller and muted
+   so the numbers are the focus, not the tags */
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+}
+
+/* ════
+   SERVICE CARDS
+   6 cards showing what the clinic offers, laid out in a 3 by 2 grid on desktop
+   and 2by3 on mobile (Bootstrap handles this with col-6 col-md-4 in the HTML)
+   Each card lifts up slightly on hover with a shadow  gives it an interactive feel
+   ════ */
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1rem;
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
+  /* height: 100% makes all cards in a row the same height even if content lengths differ */
+  height: 100%;
+}
+
+/* translateY(-5px) moves the card up 5px on hover, box-shadow adds depth underneath */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* The circular icon container above each card title
+   I used flexbox to centre the Font Awesome icon inside the circle
+   teal-light background with teal icon to match thw brands theme */
+.service-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem;
+}
+
+.service-card h5 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Muted text for the short description so it doesn't overpower the title */
+.service-card p {
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+}
+
+/* The "From €35" price tag  teal and bold so users can quickly scan prices */
+.service-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* ════
+   WHY CHOOSE US
+   4 numbered reasons in a 2by2 grid, Each item has a circular teal badge with a number and text beside it
+   I used CSS flexbox (display: flex) here to lay the number and text side by side
+   ════ */
+
+/* flex puts the number circle and text div in a horizontal row
+   align-items: flex-start keeps them aligned to the top */
+.why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* The circular badge with the number inside
+   flex-shrink: 0 is important here — without it the circle would get squished
+   when the text next to it is long, this makes sure ir is a perfect circle always */
+.why-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.why-item h5 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.why-item p {
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+  margin-bottom: 0;
+}
+
+/* ════
+   REVIEW CAROUSEL
+   I built this myself instead of using Bootstrap's carousel component
+   because I wanted full control over the styling. Bootstrap's carousel uses
+   sliding animations and its own JS which would have been harder to customise.
+   The logic is all in main.js
+   ════ */
+
+/* Outer container — max-width 700px so the cards don't stretch too wide on desktop*/
+.review-carousel {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* All cards are hidden by default with display: none
+   Only the one with .active gets shown (display: block below)*/
+.review-card {
+  display: none;
+  background: #fff;
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* This is how the active card becomes visible main.js swaps this class between cards */
+.review-card.active {
+  display: block;
+}
+
+/* Italic text for the quote gives it that classic testimonial feel */
+.review-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Author name below the quote bold but muted so the quote itself stays the focus */
+.review-author {
+  font-weight: 700;
+  color: var(--text-color-muted);
+}
+
+/* The prev/next buttons and dots row flexbox centres everything in a neat line */
+.review-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Small circular buttons for prev and next hover turns them teal to match the theme */
+.review-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-default);
+}
+
+.review-btn:hover {
+  background-color: var(--primary-color-light);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Container for the dot indicators — flexbox with a small gap between each dot */
+.review-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Each dot is a tiny 10px circle, grey by default, turns teal when its card is active
+   The transition makes the colour change smooth instead of instant */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background var(--transition-default);
+}
+
+.dot.active {
+  background: var(--primary-color);
+}

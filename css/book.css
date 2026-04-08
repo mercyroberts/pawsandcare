@@ -1,0 +1,117 @@
+/* ══════════════════════════════════════════
+   book.css — Booking page styles
+   Styles specific to book.html: form sections, input focus states,
+   time slot buttons, and the booking confirmation card
+   ══════════════════════════════════════════ */
+
+/* ── Booking Section ──
+   Two-column layout with pet details on the left, owner details on the right
+   Date & time section spans the full width below */
+.booking-section {
+  padding-top: 3rem;
+}
+
+/* Each group of fields (Pet Details, Owner Details, Date & Time) sits in a cream card */
+.form-section {
+  background: var(--background-secondary);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+}
+
+/* Section titles inside the form — uppercase with letter spacing for a clean label look */
+.form-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* Custom focus styles so inputs get a teal border and subtle glow instead of the default blue
+   This matches the brand colours and looks much nicer than Bootstrap's default focus ring */
+.booking-form .form-control,
+.booking-form .form-select {
+  border-radius: var(--radius-input);
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.9rem;
+  transition: border-color var(--transition-default), box-shadow var(--transition-default);
+}
+
+.booking-form .form-control:focus,
+.booking-form .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
+}
+
+/* Green border for valid fields, red for invalid — standard UX pattern
+   These classes are added/removed by book.js during real-time validation */
+.booking-form .form-control.is-valid,
+.booking-form .form-select.is-valid {
+  border-color: #28a745;
+}
+
+.booking-form .form-control.is-invalid,
+.booking-form .form-select.is-invalid {
+  border-color: #dc3545;
+}
+
+.booking-form .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ── Time Slot Buttons ──
+   These are generated dynamically by book.js when the user picks a date
+   Flexbox with wrap so they flow nicely across different screen widths */
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Pill-shaped buttons with teal theme — hover fills them solid teal */
+.time-slot-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color-light);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-default);
+}
+
+.time-slot-btn:hover:not(.taken) {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Selected slot gets a teal fill and a subtle shadow to make it stand out */
+.time-slot-btn.selected {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(11, 110, 110, 0.3);
+}
+
+/* Taken slots are greyed out with a strikethrough — can't be clicked
+   book.js randomly marks some slots as taken using a date-based seed */
+.time-slot-btn.taken {
+  background: #eee;
+  color: #aaa;
+  border-color: #ddd;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ── Booking Confirmation ──
+   This card appears after a successful booking submission (book.js handles the slideDown)
+   Teal left border matches the testimonial card style for visual consistency */
+.booking-confirmation {
+  background: var(--primary-color-light);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+}
