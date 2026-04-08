@@ -97,3 +97,37 @@
     line-height: 1.6;
     margin-bottom: 0;
 }
+
+/* ── Empty State ── */
+.team-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 1rem;
+}
+
+.team-empty-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 1.25rem;
+}
+
+.team-empty-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.team-empty-text {
+    font-size: 0.9rem;
+    color: var(--text-color-muted);
+    margin-bottom: 0;
+}
