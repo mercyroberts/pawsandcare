@@ -1,16 +1,19 @@
-/* ══════════════════════════════════════════
-   services.js — Services page functionality
-   Features: Category filter + Pricing estimator
-   ══════════════════════════════════════════ */
 
-  /* ─────────────────────────────────────
-     1. CATEGORY FILTER
-     Selects pills by #filterPills container
-     and cards by #servicesGrid container.
-  ───────────────────────────────────── */
+  //  services.js — Services page functionality
+  //  Features: Category filter + Pricing estimator
+
+   
+  //  1. CATEGORY FILTER
+  //  Selects pills by #filterPills container
+  //  and cards by #servicesGrid container.
+  
 
   const filterPills  = document.querySelectorAll('#filterPills .filter');
   const serviceItems = document.querySelectorAll('#servicesGrid .service-item');
+
+  // This function has category as a parameter. 
+  // serviceItems is an array of items and we are going to use a forEach
+  // With the forEach we are going to compare each item and depending what is their category we will apply a display none to hide that card. 
 
   function filterServices(category) {
     serviceItems.forEach(function (item) {
@@ -24,6 +27,8 @@
   }
 
   // Attach click listener to each filter pill
+  // This one is just changing the class when the button is clicked 
+  // To active their class and show a selected button effect 
   filterPills.forEach(function (pill) {
     pill.addEventListener('click', function () {
       // Remove active from all pills, set on clicked one
@@ -36,27 +41,26 @@
   });
 
 
-  /* ─────────────────────────────────────
-     2. PRICING ESTIMATOR
-     Price map keyed by checkbox id —
-     no data-price attribute reading needed.
-  ───────────────────────────────────── */
 
-  // Maps each checkbox id to its price in euros
+  //  2. PRICING ESTIMATOR
+  //  Price object with checkbox id 
+
+  // Create an object checkbox id to its price in euros
   const priceMap = {
-    'est-consultation': 55,
-    'est-vaccination':  75,
-    'est-grooming':     45,
-    'est-dental':      120,
-    'est-emergency':   150,
-    'est-wellness':     35
+    'consultation': 55,
+    'vaccination':  75,
+    'grooming':     45,
+    'dental':      120,
+    'emergency':   150,
+    'wellness':     35
   };
 
   const estimatorTotal = document.getElementById('estimatorTotal');
 
-  /**
-   * updateEstimator — sums all checked services and updates the total display
-   */
+  
+  //  UpdateEstimator: sums all checked services and updates the total display
+  // Object.keys used to allow us to use the for each to interate each key[value]
+  // And accumulating the value with the total variable and priceMap values. 
   function updateEstimator() {
     let total = 0;
 
@@ -70,7 +74,8 @@
     estimatorTotal.textContent = '€' + total;
   }
 
-  // Attach change listener to each estimator checkbox by ID
+  // Add change listener to each checkbox by ID
+  // Every time we change the checkbox we call the method updateEstimator to accumulate values 
   Object.keys(priceMap).forEach(function (id) {
     const checkbox = document.getElementById(id);
     if (checkbox) {
