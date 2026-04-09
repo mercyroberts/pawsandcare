@@ -60,20 +60,32 @@
 }
 
 /* ── Avatar ── */
-.team-avatar {
-    width: 72px;
-    height: 72px;
+.team-image {
     border-radius: 50%;
-    background-color: var(--primary-color-light);
     border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.2rem;
+    object-fit: cover;
+    display: block;
     margin: 0 auto 1rem;
+}
+
+.team-image-1 {
+    width: 90px;
+    height: 90px;
+}
+
+.team-image-2 {
+    width: 100px;
+    height: 100px;
+}
+
+.team-image-3 {
+    width: 95px;
+    height: 95px;
+}
+
+.team-image-4 {
+    width: 90px;
+    height: 90px;
 }
 
 /* ── Role Badge ── */
