@@ -1,145 +1,167 @@
-/* ══════════════════════════════════════════
-   TEAM PAGE — team.css
-   Styles specific to team.html
-   ══════════════════════════════════════════ */
+/*
+    TEAM PAGE — team.css
+    Styles specific to team.html
+*/
 
-/* ── Team Hero ── */
+/* TEAM HERO
+   Same teal gradient used on other pages, keeps the design consistent.
+   Subtitle uses opacity 0.85 so it looks lighter than the main title. */
 .team-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
-    padding: 4rem 0 3rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
+  padding: 4rem 0 3rem;
 }
 .team-hero .section-title,
 .team-hero .section-subtitle {
-    color: #fff;
+  color: #fff;
 }
 .team-hero .section-subtitle {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
-/* ── Team Section ── */
+/* TEAM SECTION
+   Wrapper for the search bar and the cards grid. */
 .team-section {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
 }
 
-/* ── Search Bar ── */
+/* SEARCH BAR
+   Built on Bootstrap's Input Group.
+   border-right: none on the icon and border-left: none on the input
+   remove the double border so they look like one single element.
+   The focus ring uses a teal shadow instead of Bootstrap's default blue. */
 .team-search-wrapper .input-group-text {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: 1px solid var(--primary-color);
-    border-right: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 1px solid var(--primary-color);
+  border-right: none;
 }
 .team-search-wrapper .form-control {
-    border: 1px solid var(--primary-color);
-    border-left: none;
-    border-radius: 0 var(--radius-button) var(--radius-button) 0;
-    padding: 0.6rem 1rem;
-    font-family: var(--font-body);
+  border: 1px solid var(--primary-color);
+  border-left: none;
+  border-radius: 0 var(--radius-button) var(--radius-button) 0;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-body);
 }
 .team-search-wrapper .form-control:focus {
-    box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
-    border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
+  border-color: var(--primary-color);
 }
 .team-search-wrapper .input-group-text {
-    border-radius: var(--radius-button) 0 0 var(--radius-button);
+  border-radius: var(--radius-button) 0 0 var(--radius-button);
 }
 
-/* ── Team Card ── */
+/* TEAM CARD
+   height: 100% makes all cards in the same Bootstrap row the same height.
+   Hover lifts the card up with translateY and adds a soft shadow. */
 .team-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: var(--radius-card);
-    padding: 2rem 1.25rem 1.5rem;
-    text-align: center;
-    transition: transform var(--transition-default), box-shadow var(--transition-default);
-    height: 100%;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius-card);
+  padding: 2rem 1.25rem 1.5rem;
+  text-align: center;
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
+  height: 100%;
 }
 .team-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* ── Avatar ── */
+/* Team Image
+   border-radius: 50% makes the image circular.
+   object-fit: cover stops the image from stretching more than enough.
+   Classes team-image-1 to team-image-4 set individual sizes per member. */
 .team-image {
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
 }
 
 .team-image-1 {
-    width: 90px;
-    height: 90px;
+  width: 90px;
+  height: 90px;
 }
 
 .team-image-2 {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .team-image-3 {
-    width: 95px;
-    height: 95px;
+  width: 95px;
+  height: 95px;
 }
 
 .team-image-4 {
-    width: 90px;
-    height: 90px;
+  width: 90px;
+  height: 90px;
 }
 
-/* ── Role Badge ── */
+/* ROLE BADGE
+   Uses var(--accent-color) (coral) so it highlights from the teal used elsewhere on the card. */
 .team-role-badge {
-    display: inline-block;
-    background-color: var(--accent-color-light);
-    color: var(--accent-color);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.78rem;
-    padding: 0.2rem 0.75rem;
-    border-radius: 20px;
-    margin-bottom: 0.75rem;
+  display: inline-block;
+  background-color: var(--accent-color-light);
+  color: var(--accent-color);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
 }
 
-/* ── Bio ── */
+/* BIO
+   Smaller font and keep the bio text secondary to the name and badge. */
 .team-bio {
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: var(--text-color-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
-/* ── Empty State ── */
+/* EMPTY STATE
+   Hidden by default. team.js shows this block when the search has no results.
+   The icon circle uses flexbox to center the icon inside it. */
 .team-empty {
-    text-align: center;
-    padding: 3rem 1rem;
-    margin-top: 1rem;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 1rem;
 }
 
 .team-empty-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: var(--primary-color-light);
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    margin: 0 auto 1.25rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto 1.25rem;
 }
 
 .team-empty-title {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
 }
 
 .team-empty-text {
-    font-size: 0.9rem;
-    color: var(--text-color-muted);
-    margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--text-color-muted);
+  margin-bottom: 0;
 }
