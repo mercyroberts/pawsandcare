@@ -1,13 +1,13 @@
-/* ════
+/*
    index.css — Home page styles
    All the styles that only apply to index.html live here:
    hero banner with the image slider, the animated stats bar,
    the 6 service cards, why choose us badges, and my custom review carousel.
    I separated this from styles.css so each page has its own CSS file,
    same way Joao set up his pages.
-   ════ */
+*/
 
-/* ════
+/*
    HERO SECTION
    This is the big teal gradient banner at the top of the page,
    the first thing visitors see.
@@ -115,13 +115,13 @@
   z-index: 1;
 }
 
-/* ════
+/*
    STATS BAR
    The row of 4 numbers that count up when you scroll down to them
    (500+ Pets Treated, 12+ Specialist Vets, 10+ Years Open, 4.9★ Google Rating)
    The counting animation is triggered by IntersectionObserver in main.js
    which detects when this section becomes visible on screen
-   ════ */
+   */
 .stats-section {
   padding: 3rem 0;
 }
@@ -142,12 +142,12 @@
   color: var(--text-color-muted);
 }
 
-/* ════
+/*
    SERVICE CARDS
    6 cards showing what the clinic offers, laid out in a 3 by 2 grid on desktop
    and 2by3 on mobile (Bootstrap handles this with col-6 col-md-4 in the HTML)
    Each card lifts up slightly on hover with a shadow  gives it an interactive feel
-   ════ */
+   */
 .service-card {
   background: #fff;
   border: 1px solid #eee;
@@ -201,11 +201,11 @@
   font-size: 0.9rem;
 }
 
-/* ════
+/*
    WHY CHOOSE US
    4 numbered reasons in a 2by2 grid, Each item has a circular teal badge with a number and text beside it
    I used CSS flexbox (display: flex) here to lay the number and text side by side
-   ════ */
+*/
 
 /* flex puts the number circle and text div in a horizontal row
    align-items: flex-start keeps them aligned to the top */
@@ -244,13 +244,13 @@
   margin-bottom: 0;
 }
 
-/* ════
+/*
    REVIEW CAROUSEL
-   I built this myself instead of using Bootstrap's carousel component
+   I built this instead of using Bootstrap's carousel component
    because I wanted full control over the styling. Bootstrap's carousel uses
    sliding animations and its own JS which would have been harder to customise.
    The logic is all in main.js
-   ════ */
+   */
 
 /* Outer container — max-width 700px so the cards don't stretch too wide on desktop*/
 .review-carousel {

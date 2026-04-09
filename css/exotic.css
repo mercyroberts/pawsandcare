@@ -1,39 +1,36 @@
-/* ══════════════════════════════════════════
-   exotic.css — Exotic pets page styles
-   Styles specific to exotic.html: hero banner, species accordion,
-   specialist vet cards, care tip cards, the pet quiz, and the disclaimer
-   ══════════════════════════════════════════ */
+/* Exotic pets page styles */
 
-/* ── Exotic Hero ──
-   Same teal gradient as the main hero but slightly less vertical padding
-   since this page has more content sections below */
 .exotic-hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
   color: #fff;
   padding: 4rem 0 3rem;
 }
 
-/* Override the default teal section-title colour to white for the gradient background */
+/* The section-title and section-subtitle are teal by default in styles.css
+   but on this gradient background they need to be white to stay readable */
 .exotic-hero .section-title,
 .exotic-hero .section-subtitle {
   color: #fff;
 }
 
+/* Slight transparency on the subtitle so the heading stays the main focus */
 .exotic-hero .section-subtitle {
   opacity: 0.85;
 }
 
-/* ── Bootstrap Accordion Customisation ──
-   I customised Bootstrap's accordion component to match my colour scheme
-   The default accordion looks too plain, so I changed the button colours
-   and made the expanded state use the teal brand colour
-   Reference: https://getbootstrap.com/docs/5.3/components/accordion/ */
+/* ── Bootstrap Accordion customisation
+   By default the styles doesn't match my colour scheme so I overrode it here.
+*/
 .accordion-item {
-  border: 1px solid #eee;
+  border: 1px solid #eee; /* lighter border than Bootstrap's default */
   margin-bottom: 0;
 }
 
-/* Poppins font on accordion buttons so they match the rest of the headings */
+/* Poppins font on accordion buttons to match the rest of my headings across the site */
 .accordion-button {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -41,49 +38,60 @@
   background: #f8f8f8;
 }
 
-/* When expanded: teal background with white text — makes it clear which section is open */
+/* When a panel is expanded, the button background turns teal with white text
+   This makes it obvious which section is currently open */
 .accordion-button:not(.collapsed) {
   background-color: var(--primary-color);
   color: #fff;
-  box-shadow: none;
 }
 
-/* The chevron arrow icon turns white when the accordion is open
-   brightness(100) is a quick filter trick to make the dark arrow white */
+/* The little chevron arrow Bootstrap adds turns white when the panel is open */
 .accordion-button:not(.collapsed)::after {
   filter: brightness(100);
 }
 
-/* Custom focus ring using the teal colour instead of Bootstrap's default blue */
+/* Custom focus ring teal glow instead of Bootstrap's default blue */
 .accordion-button:focus {
   box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
 }
 
-/* Warm cream background inside accordion panels for consistency with other sections */
+/* Warm cream background inside the accordion panels to match other sections */
 .accordion-body {
   background: var(--background-secondary);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
-/* ── Specialist Cards ──
-   Vet profile cards with circular avatar initials, name, role badge, and bio
-   Same hover lift effect as the service cards on the home page */
+/*Fun Fact Box*/
+.fun-fact {
+  background: var(--primary-color-light);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--radius-input);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Specialist Cards
+   Same hover lift effect as the service cards on the home page for consistency */
 .specialist-card {
   background: #fff;
   border: 1px solid #eee;
   border-radius: var(--radius-card);
   padding: 1.5rem;
-  transition: transform var(--transition-default), box-shadow var(--transition-default);
-  height: 100%;
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
+  height: 100%; /* makes all cards in a row the same height */
 }
 
+/* Card goed up slightly on hover and moves 4px up */
 .specialist-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Circular avatar with the vet's initials — using teal background since I don't have actual photos */
+/* Circular avatar showing the vet's initials, flexbox centres the text inside the circle*/
 .specialist-avatar {
   width: 60px;
   height: 60px;
@@ -96,10 +104,10 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.2rem;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto 0.75rem; /* keeps the circle horizontal and adds space below */
 }
 
-/* Small coral badge showing the vet's specialisation (e.g. "Reptile Specialist") */
+/* Small badge showing the vet's specialisation coral background with coral text */
 .specialist-role {
   display: inline-block;
   background: var(--accent-color-light);
@@ -110,14 +118,13 @@
   border-radius: 4px;
 }
 
+/* Bio paragraph  smaller and muted so the name and role are the first thing you read */
 .specialist-card p {
   font-size: 0.875rem;
   color: var(--text-color-muted);
 }
 
-/* ── Care Tips Cards ──
-   3 cards with icons showing general exotic pet care advice
-   Same structure as service cards but without the price label */
+/* Care Tips Cards styles*/
 .care-card {
   background: #fff;
   border: 1px solid #eee;
@@ -131,7 +138,7 @@
   transform: translateY(-4px);
 }
 
-/* Same circular icon style as the service cards — keeps things visually consistent */
+/* Circular icon container matches the service-icon style from index.css for consistency */
 .care-icon {
   width: 50px;
   height: 50px;
@@ -150,10 +157,7 @@
   color: var(--text-color-muted);
 }
 
-/* ── Pet Quiz ──
-   The "Which Exotic Pet Suits You?" interactive quiz
-   Steps are shown one at a time using display:none / .active
-   exotic.js handles the navigation and scoring logic */
+/* Pet Quiz styles */
 .quiz-container {
   background: #fff;
   border: 1px solid #eee;
@@ -161,7 +165,7 @@
   padding: 2rem;
 }
 
-/* All quiz steps are hidden by default, .active shows the current one */
+/* All steps are hidden only the one with .active gets shown*/
 .quiz-step {
   display: none;
 }
@@ -170,6 +174,7 @@
   display: block;
 }
 
+/* Question text*/
 .quiz-question {
   font-size: 1.1rem;
   font-weight: 700;
@@ -177,15 +182,15 @@
   margin-bottom: 1rem;
 }
 
-/* Radio options stacked vertically with padding — easier to tap on mobile */
+/* Options are put vertically using flex-direction */
 .quiz-options {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Each option is a clickable row with radio + label
-   The transparent border becomes teal when selected, giving clear visual feedback */
+/* Each answer option is a <label> wrapping a radio input
+  I made the whole row clickable by wrapping everything in the label tag */
 .quiz-option {
   display: flex;
   align-items: center;
@@ -195,46 +200,44 @@
   border-radius: var(--radius-input);
   padding: 0.75rem 1rem;
   cursor: pointer;
-  transition: border-color var(--transition-default), background-color var(--transition-default);
+  transition:
+    border-color var(--transition-default),
+    background-color var(--transition-default);
 }
 
 .quiz-option:hover {
   border-color: var(--primary-color-light);
 }
 
-/* :has() selector — highlights the option when its radio input is checked
-   This is a modern CSS feature that replaces the need for JS class toggling */
+/* :has() is a modern CSS selector that checks if a child element matches a condition
+   Here it highlights the option when its radio button is checked, no JavaScript needed for this */
 .quiz-option:has(input:checked) {
   border-color: var(--primary-color);
   background: var(--primary-color-light);
 }
 
-/* Teal radio buttons instead of the default blue — accent-color is a simple modern way to do this */
 .quiz-option input[type="radio"] {
   accent-color: var(--primary-color);
 }
 
-/* Navigation row: prev button on the left, step indicator in middle, next on the right */
 .quiz-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.quiz-progress {
+.quiz-stage {
   font-size: 0.85rem;
   color: var(--text-color-muted);
 }
 
-/* ── Quiz Result Card ──
-   Shown after the user completes all 3 questions — displays their matched pet
-   with an icon, description, book link and retake button */
+/* Quiz Result Card styles */
 .quiz-result-card {
   text-align: center;
   padding: 2rem;
 }
 
-/* Large circular icon for the recommended pet — same style as the service/care icons but bigger */
+/* Large circular icon for the recommended pet same style as care icon but bigger*/
 .quiz-result-icon {
   width: 70px;
   height: 70px;
@@ -253,29 +256,34 @@
   font-weight: 700;
 }
 
-/* max-width keeps the description readable and centred instead of spanning the full card width */
 .quiz-result-card p {
   color: var(--text-color-muted);
   max-width: 500px;
   margin: 0.5rem auto 0;
 }
 
-/* ── Quiz Shake Animation ──
-   Quick left-right shake that plays when the user tries to advance without picking an option
-   exotic.js adds/removes the .shake class to trigger this — CSS handles the actual animation */
+/* Quiz Shake Animation
+   This plays when the user tries to click Next without selecting an option
+   exotic.js adds the .shake class, the CSS @keyframes handles the actual movement,
+*/
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
 }
 
 .shake {
   animation: shake 0.3s ease;
 }
 
-/* ── Disclaimer Banner ──
-   Coral-tinted warning at the bottom of the exotic page
-   Reminds users this is a demo site — important since we have real-looking booking functionality */
+/*Disclaimer Banner STyles*/
 .disclaimer {
   background: var(--accent-color-light);
   color: #c44;
@@ -285,5 +293,5 @@
   font-size: 0.9rem;
   text-align: left;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto; /* centres the banner on the page */
 }
