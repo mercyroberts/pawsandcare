@@ -1,8 +1,13 @@
-/* ══════════════════════════════════════════
-   SERVICES PAGE — services.css
-   ══════════════════════════════════════════ */
+/* SERVICES PAGE STYLES
+   Hero banner, filter buttons, service cards grid,
+   price badge, and the pricing estimator.
+   This was a pattern which Mercy and I used to build the pages, we kept a css file for each page
+   to make the maintenance and code understanding clear. 
+*/
 
-/* ── Services Hero ── */
+/* SERVICES HERO BANNER
+   Same teal gradient as the home page hero, keeps the page design consistent.
+ */
 .services-hero {
   background: linear-gradient(
     135deg,
@@ -19,11 +24,12 @@
   opacity: 0.85;
 }
 
-/* ── Filter Pills ── */
+/* FILTER BUTTONS
+   Toggle buttons that let users filter cards by pet type (All / Dogs / Cats / Exotic) */
 .services-filter-section {
   padding: 2rem 0 0;
 }
-.filter-pill {
+.filter {
   display: inline-flex;
   align-items: center;
   padding: 0.45rem 1.25rem;
@@ -39,21 +45,23 @@
     background-color var(--transition-default),
     color var(--transition-default);
 }
-.filter-pill:hover {
+.filter:hover {
   background-color: var(--primary-color-light);
 }
-.filter-pill.active {
+.filter.active {
   background-color: var(--primary-color);
   color: #fff;
 }
 
-/* ── Services Grid ── */
+/* SERVICES GRID
+   Wraps the 6 service cards - spacing handled by Bootstrap g-4 class */
 .services-grid-section {
   padding-top: 2rem;
   padding-bottom: 5rem;
 }
 
-/* ── Price Badge ── */
+/* PRICE BADGE
+   Teal pill badge shown at the bottom of each service card. */
 .service-price-badge {
   display: inline-block;
   background-color: var(--primary-color-light);
@@ -66,7 +74,8 @@
   margin-top: 0.5rem;
 }
 
-/* ── Estimator Box ── */
+/* PRICING ESTIMATOR
+   Bordered box with a checkbox list and a live total at the bottom. */
 .estimator-box {
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -86,10 +95,12 @@
 .estimator-row:last-child {
   border-bottom: none;
 }
+/* RESET BOOTSTRAP'S DEFAULT FLOAT AND MARGIN ON FORM-CHECK-INPUT
+   so the checkbox sits inline with the flex row. */
 .estimator-row .form-check-input {
   flex-shrink: 0;
-  float: none; /* reset Bootstrap's float: left */
-  margin-left: 0; /* reset Bootstrap's margin-left: -1.5em */
+  float: none;
+  margin-left: 0;
   width: 1.1em;
   height: 1.1em;
   margin-top: 0;
@@ -115,7 +126,8 @@
   margin-left: 1rem;
 }
 
-/* ── Estimator Total Row ── */
+/* TOTAL ROW AT THE BOTTOM OF THE ESTIMATOR BOX
+   Teal background and bold text to make the total stand out. */
 .estimator-total-row {
   display: flex;
   justify-content: space-between;

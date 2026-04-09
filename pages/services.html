@@ -1,8 +1,11 @@
+<!-- Name: Joao Lucas Bugati | Student Number: x25163116 -->
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- This head section has all the meta info, stylesheets and fonts the page needs to load properly -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Added these meta tags for SEO so search engines can find this page easier -->
     <meta
       name="description"
       content="PawsAndCare.ie — Browse all veterinary services for dogs, cats, and exotic pets in Dublin. Use the pricing estimator to plan your visit."
@@ -12,28 +15,30 @@
       content="vet services, veterinary Dublin, dog vet, cat vet, exotic vet, grooming, dental, vaccination"
     />
     <title>Services - PawsAndCare</title>
-
-    <!-- Favicon -->
+    <!-- Favicon so the little paw icon shows up in the browser tab -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
-
-    <!-- Bootstrap 5.3.3 CSS (CDN) -->
+    <!-- Bootstrap 5.3.3 CSS loaded from CDN instead of locally to keep my project folder lighter -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome 6 (CDN) -->
+    <!-- Font Awesome 6.5.1 icon library loaded from Cloudflare CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
-    <!-- Custom CSS -->
+    <!-- Global design tokens, typography, shared components (navbar, footer, cards) -->
     <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Shared styles for the home page and the services page -->
+    <link rel="stylesheet" href="../css/index.css" />
+    <!-- Styles for the services page -->
     <link rel="stylesheet" href="../css/services.css" />
   </head>
   <body>
-    <!-- NAVIGATION - Services link active -->
+    <!-- SECTION 1: NAVIGATION
+         Sticky top navbar - Services link is marked active
+         Bootstrap classes used: navbar-expand-lg, navbar-dark,
+         sticky-top, navbar-toggler, collapse, navbar-collapse. -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand fw-bold" href="../index.html">
@@ -80,7 +85,10 @@
       </div>
     </nav>
 
-    <!-- PAGE HERO - Title + Subtitle -->
+    <!-- SECTION 2: PAGE HERO
+         Full-width teal gradient banner with the page title
+         and a short description subtitle.
+         Styled in services.css → .services-hero. -->
     <section class="services-hero">
       <div class="container text-center">
         <h1 class="section-title">Our Services</h1>
@@ -91,7 +99,14 @@
       </div>
     </section>
 
-    <!-- FILTER PILLS - All / Dogs / Cats / Exotic -->
+    <!-- SECTION 3: FILTER PILLS
+         Four toggle buttons that moves the JS category filter.
+         Each button has a data-filter attribute that maps
+         to the data-category values on service cards below.
+         The "All" pill starts active (class="filter active").
+         JS hook: services.js reads #filterPills .filter.
+         Once the user clicks the button this is gonna remove 
+         the class active and filter it as the user selects different options.-->
     <section class="services-filter-section">
       <div class="container">
         <div
@@ -100,27 +115,37 @@
           role="group"
           aria-label="Filter services by pet type"
         >
-          <button class="filter-pill active" data-filter="all">
+          <!-- data-filter="all" → shows all service cards -->
+          <button class="filter active" data-filter="all">
             <i class="fa-solid fa-layer-group me-1"></i>All
           </button>
-          <button class="filter-pill" data-filter="dogs">
+          <!-- data-filter="dogs" → shows only cards containing "dogs" in data-category -->
+          <button class="filter" data-filter="dogs">
             <i class="fa-solid fa-dog me-1"></i>Dogs
           </button>
-          <button class="filter-pill" data-filter="cats">
+          <!-- data-filter="cats" → shows only cards containing "cats" in data-category -->
+          <button class="filter" data-filter="cats">
             <i class="fa-solid fa-cat me-1"></i>Cats
           </button>
-          <button class="filter-pill" data-filter="exotic">
+          <!-- data-filter="exotic" → shows only cards containing "exotic" in data-category -->
+          <button class="filter" data-filter="exotic">
             <i class="fa-solid fa-dragon me-1"></i>Exotic
           </button>
         </div>
       </div>
     </section>
 
-    <!-- SERVICE CARDS -->
+    <!-- 
+         SECTION 4: SERVICE CARDS GRID
+         6 cards in a responsive Bootstrap grid.
+         Each card wraps (.service-item) has a data-category
+         attribute that lists which pet types the service applies to (comma-separated)
+         which is gonna be used to filter the services.
+         JS hook: services.js reads #servicesGrid .service-item and toggles display:none based on the active filter pill.-->
     <section class="services-grid-section">
       <div class="container">
         <div class="row g-4" id="servicesGrid">
-          <!-- 1. General Consultation — dogs, cats, exotic -->
+          <!-- Card 1: General Consultation - dogs, cats and exotic pets -->
           <div
             class="col-sm-6 col-md-4 service-item"
             data-category="dogs,cats,exotic"
@@ -138,7 +163,7 @@
             </div>
           </div>
 
-          <!-- 2. Vaccination Package — dogs, cats -->
+          <!-- Card 2: Vaccination Package - dogs and cats -->
           <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats">
             <div class="service-card text-center h-100">
               <div class="service-icon">
@@ -153,7 +178,7 @@
             </div>
           </div>
 
-          <!-- 3. Full Grooming — dogs, cats -->
+          <!-- Card 3: Full Grooming - dogs and cats -->
           <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats">
             <div class="service-card text-center h-100">
               <div class="service-icon">
@@ -168,7 +193,7 @@
             </div>
           </div>
 
-          <!-- 4. Dental Cleaning — dogs, cats -->
+          <!-- Card 4: Dental Cleaning - dogs and cats -->
           <div class="col-sm-6 col-md-4 service-item" data-category="dogs,cats">
             <div class="service-card text-center h-100">
               <div class="service-icon">
@@ -183,7 +208,7 @@
             </div>
           </div>
 
-          <!-- 5. Emergency Care — dogs, cats, exotic -->
+          <!-- Card 5: Emergency Care - dogs, cats and exotic pets -->
           <div
             class="col-sm-6 col-md-4 service-item"
             data-category="dogs,cats,exotic"
@@ -201,7 +226,7 @@
             </div>
           </div>
 
-          <!-- 6. Wellness Plan — dogs, cats, exotic -->
+          <!-- Card 6: Wellness Plan - dogs, cats and exotic pets -->
           <div
             class="col-sm-6 col-md-4 service-item"
             data-category="dogs,cats,exotic"
@@ -219,12 +244,14 @@
             </div>
           </div>
         </div>
-        <!-- /.row -->
       </div>
     </section>
 
-    <!-- PRICING ESTIMATOR - Static, cream bg
-   -->
+    <!-- SECTION 5: PRICING ESTIMATOR
+         Each checkbox has a data-price attribute and a unique id.
+         JS hook (services.js): listens to "change" events on each
+         checkbox, sums the data-price values of checked items,
+         and writes the total to #estimatorTotal. -->
     <section class="cream-bg">
       <div class="container">
         <div class="row justify-content-center">
@@ -235,98 +262,101 @@
             </p>
 
             <div class="estimator-box">
-              <!-- Service checkboxes -->
+              <!-- Checkbox list - each input links to a label via for/id -->
               <div class="estimator-list">
+                <!-- Row 1: General Consultation €55 -->
                 <div class="form-check estimator-row">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="est-consultation"
+                    id="consultation"
                     data-price="55"
                   />
                   <label
                     class="form-check-label estimator-label"
-                    for="est-consultation"
+                    for="consultation"
                   >
                     <span>General Consultation</span>
                     <span class="estimator-price">€55</span>
                   </label>
                 </div>
 
+                <!-- Row 2: Vaccination Package €75 -->
                 <div class="form-check estimator-row">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="est-vaccination"
+                    id="vaccination"
                     data-price="75"
                   />
                   <label
                     class="form-check-label estimator-label"
-                    for="est-vaccination"
+                    for="vaccination"
                   >
                     <span>Vaccination Package</span>
                     <span class="estimator-price">€75</span>
                   </label>
                 </div>
 
+                <!-- Row 3: Full Grooming €45 -->
                 <div class="form-check estimator-row">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="est-grooming"
+                    id="grooming"
                     data-price="45"
                   />
                   <label
                     class="form-check-label estimator-label"
-                    for="est-grooming"
+                    for="grooming"
                   >
                     <span>Full Grooming</span>
                     <span class="estimator-price">€45</span>
                   </label>
                 </div>
 
+                <!-- Row 4: Dental Cleaning €120 -->
                 <div class="form-check estimator-row">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="est-dental"
+                    id="dental"
                     data-price="120"
                   />
-                  <label
-                    class="form-check-label estimator-label"
-                    for="est-dental"
-                  >
+                  <label class="form-check-label estimator-label" for="dental">
                     <span>Dental Cleaning</span>
                     <span class="estimator-price">€120</span>
                   </label>
                 </div>
 
+                <!-- Row 5: Emergency Care €150 -->
                 <div class="form-check estimator-row">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="est-emergency"
+                    id="emergency"
                     data-price="150"
                   />
                   <label
                     class="form-check-label estimator-label"
-                    for="est-emergency"
+                    for="emergency"
                   >
                     <span>Emergency Care</span>
                     <span class="estimator-price">€150</span>
                   </label>
                 </div>
 
+                <!-- Row 6: Wellness Plan  €35/month  -->
                 <div class="form-check estimator-row">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="est-wellness"
+                    id="wellness"
                     data-price="35"
                   />
                   <label
                     class="form-check-label estimator-label"
-                    for="est-wellness"
+                    for="wellness"
                   >
                     <span
                       >Wellness Plan
@@ -336,9 +366,9 @@
                   </label>
                 </div>
               </div>
-              <!-- /.estimator-list -->
-
-              <!-- Total row -->
+              <!-- Total display - updated live by services.js -> updateEstimator()
+               This values is updated everytime when the users 
+               clicks on the checkbox changing their values from unchecked to checked -->
               <div class="estimator-total-row">
                 <span class="estimator-total-label">Estimated Total</span>
                 <span class="estimator-total-value" id="estimatorTotal"
@@ -346,14 +376,11 @@
                 >
               </div>
             </div>
-            <!-- /.estimator-box -->
-
             <p
               class="text-center mt-3"
               style="font-size: 0.85rem; color: var(--text-color-muted)"
             >
-              Prices are indicative. Final cost confirmed at consultation. VAT
-              may apply.
+              Prices are indicative. Final cost confirmed at consultation.
             </p>
           </div>
         </div>
@@ -418,11 +445,20 @@
         </p>
       </div>
     </footer>
-
-    <!-- Bootstrap 5 JS Bundle (CDN) -->
+    <!-- Bootstrap 5.3.3 JS Bundle (CDN) includes Popper.js required for navbar collapse toggle on mobile. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Page-specific JS -->
+    <!-- Page-specific JS loaded with defer so it runs after DOM is parsed.-->
     <script src="../js/services.js" defer></script>
+    <!-- REFERENCES & RESOURCES
+        Documentation I used to help build different parts of this page -->
+    <!-- Bootstrap 5 Navbar:
+         - Bootstrap Docs: https://getbootstrap.com/docs/5.3/components/navbar/
+    -->
+    <!-- Bootstrap 5 Grid System (container, row, col-sm-6, col-md-4, col-md-8, g-4):
+         - Bootstrap Docs: https://getbootstrap.com/docs/5.3/layout/grid/
+    -->
+    <!-- Bootstrap 5 Checks & Radios (form-check, form-check-input, form-check-label - used in the pricing estimator):
+         - Bootstrap Docs: https://getbootstrap.com/docs/5.3/forms/checks-radios/
+    -->
   </body>
 </html>
