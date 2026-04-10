@@ -216,13 +216,12 @@ $(document).ready(function () {
   }
 });
 
-/* ════
+/*
    REFERENCES & RESOURCES
    YouTube tutorials and docs I used while building the JS for this page
-   ════ */
+*/
 
 // $(document).ready() and jQuery basics:
-// - "jQuery Tutorial for Beginners" by Programming with Mosh: https://www.youtube.com/watch?v=2OMzGBIaEzQ
 // - "jQuery Crash Course" by Traversy Media: https://www.youtube.com/watch?v=3nrLc_JOF7k
 
 // IntersectionObserver (stats counter animation):

@@ -1,356 +1,620 @@
-<!DOCTYPE html>
+<!-- Name: Mercy Robert | Student Number: x25101927 -->
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Exotic pet care at PawsAndCare.ie — specialist veterinary services for reptiles, birds, small mammals and invertebrates in Dublin.">
-  <meta name="keywords" content="exotic pets, reptile vet, bird vet, small mammals, Dublin vet, exotic animal care">
-  <title>Exotic Pet Care — PawsAndCare</title>
+  <!-- This head section has all the meta info and links the page needs to load -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- These meta tags help with SEO so search engines can find the page -->
+    <meta
+      name="description"
+      content="Exotic pet care at PawsAndCare.ie specialist veterinary services for reptiles, birds, small mammals and invertebrates in Dublin."
+    />
+    <meta
+      name="keywords"
+      content="exotic pets, reptile vet, bird vet, small mammals, Dublin vet, exotic animal care"
+    />
+    <title>Exotic Pet Care - PawsAndCare</title>
 
-  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/exotic.css">
-</head>
-<body>
-
-  <!-- ══════════════════════════════════════════
-       NAVIGATION
-  ══════════════════════════════════════════ -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="../index.html">
-        <i class="fa-solid fa-paw me-2"></i>PawsAndCare
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="exotic.html">Exotic Pets</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-3">
-            <a class="btn btn-cta" href="book.html">Book Now</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ══════════════════════════════════════════
-       HERO / INTRO
-  ══════════════════════════════════════════ -->
-  <section class="exotic-hero text-center">
-    <div class="container">
-      <h1 class="section-title">Exotic Pet Care</h1>
-      <p class="section-subtitle">
-        Specialist veterinary services for reptiles, birds, small mammals &amp; invertebrates.
-        Our exotic team has years of dedicated experience.
-      </p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       SPECIES ACCORDION
-  ══════════════════════════════════════════ -->
-  <section id="species">
-    <div class="container">
-      <h2 class="section-title text-center">Species Information</h2>
-      <p class="section-subtitle text-center">Click to learn about each group</p>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="accordion" id="speciesAccordion">
-
-            <!-- Reptiles -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#reptiles" aria-expanded="true" aria-controls="reptiles">
-                  <i class="fa-solid fa-dragon me-2"></i> Reptiles
-                </button>
-              </h2>
-              <div id="reptiles" class="accordion-collapse collapse show" data-bs-parent="#speciesAccordion">
-                <div class="accordion-body">
-                  <p><strong>Common species:</strong> Bearded dragons, leopard geckos, corn snakes, ball pythons, Hermann's tortoises.</p>
-                  <p><strong>Common conditions:</strong> Metabolic bone disease, respiratory infections, parasites, shell rot (tortoises).</p>
-                  <p><strong>Care tips:</strong> Maintain correct temperature gradients, provide UVB lighting, and ensure proper humidity levels for your species.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Birds -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#birds" aria-expanded="false" aria-controls="birds">
-                  <i class="fa-solid fa-dove me-2"></i> Birds
-                </button>
-              </h2>
-              <div id="birds" class="accordion-collapse collapse" data-bs-parent="#speciesAccordion">
-                <div class="accordion-body">
-                  <p><strong>Common species:</strong> African grey parrots, budgerigars, cockatiels, lovebirds, canaries.</p>
-                  <p><strong>Common conditions:</strong> Psittacosis, feather plucking, respiratory disease, beak and nail overgrowth.</p>
-                  <p><strong>Care tips:</strong> Provide a spacious cage, varied diet with fresh fruit and veg, and regular out-of-cage exercise time.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Small Mammals -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#mammals" aria-expanded="false" aria-controls="mammals">
-                  <i class="fa-solid fa-otter me-2"></i> Small Mammals
-                </button>
-              </h2>
-              <div id="mammals" class="accordion-collapse collapse" data-bs-parent="#speciesAccordion">
-                <div class="accordion-body">
-                  <p><strong>Common species:</strong> Rabbits, guinea pigs, hamsters, ferrets, chinchillas.</p>
-                  <p><strong>Common conditions:</strong> Dental disease, GI stasis (rabbits), respiratory infections, skin mites.</p>
-                  <p><strong>Care tips:</strong> High-fibre diet (unlimited hay for rabbits and guinea pigs), spacious enclosures, and regular dental checks.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Invertebrates -->
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#invertebrates" aria-expanded="false" aria-controls="invertebrates">
-                  <i class="fa-solid fa-spider me-2"></i> Invertebrates
-                </button>
-              </h2>
-              <div id="invertebrates" class="accordion-collapse collapse" data-bs-parent="#speciesAccordion">
-                <div class="accordion-body">
-                  <p><strong>Common species:</strong> Tarantulas, stick insects, giant African land snails, praying mantises.</p>
-                  <p><strong>Common conditions:</strong> Dehydration, moulting difficulties, mite infestations, dietary deficiencies.</p>
-                  <p><strong>Care tips:</strong> Research your species' specific humidity and temperature needs. Handle with care — many invertebrates are fragile.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       SPECIALIST PROFILES
-  ══════════════════════════════════════════ -->
-  <section id="specialists" class="cream-bg">
-    <div class="container">
-      <h2 class="section-title text-center">Our Exotic Specialists</h2>
-      <p class="section-subtitle text-center">Meet the team dedicated to exotic animal care</p>
-
-      <div class="row g-4 mt-2 justify-content-center">
-        <div class="col-md-4">
-          <div class="specialist-card text-center">
-            <div class="specialist-avatar">LM</div>
-            <h5>Dr. Liam Murphy</h5>
-            <span class="specialist-role">Reptile Specialist</span>
-            <p class="mt-2">10+ years experience with lizards, snakes, and tortoises. Special interest in metabolic bone disease.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="specialist-card text-center">
-            <div class="specialist-avatar">NR</div>
-            <h5>Dr. Nina Rossi</h5>
-            <span class="specialist-role">Avian Specialist</span>
-            <p class="mt-2">Expert in parrot behaviour and avian respiratory disease. Passionate about bird welfare.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="specialist-card text-center">
-            <div class="specialist-avatar">TO</div>
-            <h5>Tomás O'Brien</h5>
-            <span class="specialist-role">Small Mammals</span>
-            <p class="mt-2">Specialist in rabbit and guinea pig care, dental procedures, and small mammal nutrition.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CARE TIPS
-  ══════════════════════════════════════════ -->
-  <section id="care-tips">
-    <div class="container">
-      <h2 class="section-title text-center">Exotic Pet Care Tips</h2>
-      <div class="row g-4 mt-2">
-        <div class="col-md-4">
-          <div class="care-card text-center">
-            <div class="care-icon"><i class="fa-solid fa-house"></i></div>
-            <h5>Housing</h5>
-            <p>Research enclosure size, substrate, and enrichment for your species. Temperature gradients are critical for reptiles.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="care-card text-center">
-            <div class="care-icon"><i class="fa-solid fa-bowl-food"></i></div>
-            <h5>Nutrition</h5>
-            <p>Each species has unique dietary needs. Provide varied diets and supplement with vitamins where needed.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="care-card text-center">
-            <div class="care-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h5>Warning Signs</h5>
-            <p>Watch for lethargy, loss of appetite, unusual discharge, or changes in droppings. Early detection saves lives.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       PET QUIZ — JS interactive
-  ══════════════════════════════════════════ -->
-  <section id="pet-quiz" class="cream-bg">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-7">
-          <h2 class="section-title text-center">Find Your Exotic Pet Match</h2>
-          <p class="section-subtitle text-center">Answer 3 quick questions and we'll suggest the right exotic pet for you!</p>
-
-          <div id="quizContainer" class="quiz-container mt-4">
-            <!-- Question 1 -->
-            <div class="quiz-step active" data-step="1">
-              <h5 class="quiz-question">How much space do you have?</h5>
-              <div class="quiz-options">
-                <label class="quiz-option">
-                  <input type="radio" name="q1" value="small"> A small flat
-                </label>
-                <label class="quiz-option">
-                  <input type="radio" name="q1" value="medium"> A house with a garden
-                </label>
-                <label class="quiz-option">
-                  <input type="radio" name="q1" value="large"> A large dedicated room or enclosure
-                </label>
-              </div>
-              <div class="quiz-nav mt-3">
-                <span class="quiz-progress">Step 1 of 3</span>
-                <button class="btn btn-cta btn-sm quiz-next" data-next="2">Next <i class="fa-solid fa-arrow-right ms-1"></i></button>
-              </div>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="quiz-step" data-step="2">
-              <h5 class="quiz-question">How much time can you dedicate daily?</h5>
-              <div class="quiz-options">
-                <label class="quiz-option">
-                  <input type="radio" name="q2" value="low"> Under 30 minutes
-                </label>
-                <label class="quiz-option">
-                  <input type="radio" name="q2" value="medium"> 30 minutes to 1 hour
-                </label>
-                <label class="quiz-option">
-                  <input type="radio" name="q2" value="high"> Over 1 hour
-                </label>
-              </div>
-              <div class="quiz-nav mt-3">
-                <button class="btn btn-outline-secondary btn-sm quiz-prev" data-prev="1"><i class="fa-solid fa-arrow-left me-1"></i> Back</button>
-                <span class="quiz-progress">Step 2 of 3</span>
-                <button class="btn btn-cta btn-sm quiz-next" data-next="3">Next <i class="fa-solid fa-arrow-right ms-1"></i></button>
-              </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="quiz-step" data-step="3">
-              <h5 class="quiz-question">How do you feel about handling your pet?</h5>
-              <div class="quiz-options">
-                <label class="quiz-option">
-                  <input type="radio" name="q3" value="hands-off"> I prefer to observe — no touching
-                </label>
-                <label class="quiz-option">
-                  <input type="radio" name="q3" value="occasional"> Occasional gentle handling is fine
-                </label>
-                <label class="quiz-option">
-                  <input type="radio" name="q3" value="hands-on"> I want a pet I can interact with regularly
-                </label>
-              </div>
-              <div class="quiz-nav mt-3">
-                <button class="btn btn-outline-secondary btn-sm quiz-prev" data-prev="2"><i class="fa-solid fa-arrow-left me-1"></i> Back</button>
-                <span class="quiz-progress">Step 3 of 3</span>
-                <button class="btn btn-cta btn-sm" id="quizSubmit">See My Match <i class="fa-solid fa-wand-magic-sparkles ms-1"></i></button>
-              </div>
-            </div>
-
-            <!-- Result -->
-            <div id="quizResult" class="quiz-result" style="display:none;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CTA + DISCLAIMER
-  ══════════════════════════════════════════ -->
-  <section id="exotic-cta" class="text-center">
-    <div class="container">
-      <h3>Ready to give your exotic pet the best care?</h3>
-      <a href="book.html?type=exotic" class="btn btn-cta btn-lg mt-3">
-        Book Exotic Appointment <i class="fa-solid fa-arrow-right ms-2"></i>
-      </a>
-
-      <div class="disclaimer mt-5">
-        <i class="fa-solid fa-triangle-exclamation me-2"></i>
-        <strong>Disclaimer:</strong> Exotic pet care requires specialist knowledge. Always consult a qualified
-        exotic veterinarian before making care or dietary decisions for your pet. The information on this page
-        is for guidance only.
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h5 class="footer-brand"><i class="fa-solid fa-paw me-2"></i>PawsAndCare</h5>
-          <p>Expert veterinary care for all your pets in Dublin.</p>
-        </div>
-        <div class="col-md-4">
-          <h6 class="footer-heading">Quick Links</h6>
-          <ul class="footer-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="exotic.html">Exotic Pets</a></li>
-            <li><a href="book.html">Book Now</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <!-- Favicon so the paw icon shows up in the browser tab -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap 5 from CDN — I used this for the accordion, grid, and utility classes on this page -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for the species icons (dragon, dove, spider...) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Shared styles (variables, navbar, footer, buttons) -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Exotic page specific styles -->
+    <link rel="stylesheet" href="../css/exotic.css" />
+  </head>
+  <body>
+    <!-- Navigation — same navbar used across all my pages
+       Bootstrap navbar reference: https://getbootstrap.com/docs/5.3/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">
+          <i class="fa-solid fa-paw me-2"></i>PawsAndCare
+        </a>
+        <!-- This button only shows on mobile and collapses the nav into a hamburger menu -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ms-auto pushes the links to the right side of the navbar on desktop or large screens-->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <!-- active class here because this is the current page styled in styles.css with an underline -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="exotic.html"
+                >Exotic Pets</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <!-- Book Now sits separately from the other links using btn-cta to make it stand out -->
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-cta" href="book.html">Book Now</a>
+            </li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h6 class="footer-heading">Contact Us</h6>
-          <ul class="footer-contact">
-            <li><i class="fa-solid fa-location-dot me-2"></i>123 Pet Street, Dublin 2, Ireland</li>
-            <li><i class="fa-solid fa-phone me-2"></i>+353 1 234 5678</li>
-            <li><i class="fa-solid fa-envelope me-2"></i>info@pawsandcare.ie</li>
-          </ul>
-          <div class="footer-socials mt-3">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </nav>
+
+    <!-- Hero section - teal gradient banner similar to the home page but shorter
+       text-center centres everything since there's no image on this page's hero -->
+    <section class="exotic-hero text-center">
+      <div class="container">
+        <h1 class="section-title">Exotic Pet Care</h1>
+        <p class="section-subtitle">
+          Specialist veterinary services for reptiles, birds, small mammals
+          &amp; invertebrates. Our exotic team has years of dedicated
+          experience.Mercy Robert, our lead specialist can recommend the best Dr
+          for your pet's needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Species Accordion section — I used Bootstrap's accordion component here
+       so each species group can be expanded/collapsed without a page reload.
+       Bootstrap accordion reference: https://getbootstrap.com/docs/5.3/components/accordion/ -->
+    <section id="species">
+      <div class="container">
+        <h2 class="section-title text-center">Species Information</h2>
+        <p class="section-subtitle text-center">
+          Click to learn about each group
+        </p>
+
+        <!--keeps the accordion from stretching too wide on large screens -->
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <!--data-bs-parent="#speciesAccordion" means only one panel can be open at a time -->
+            <div class="accordion" id="speciesAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#reptiles"
+                    aria-expanded="true"
+                    aria-controls="reptiles"
+                  >
+                    <i class="fa-solid fa-dragon me-2"></i> Reptiles
+                  </button>
+                </h2>
+                <div
+                  id="reptiles"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#speciesAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      <strong>Common species:</strong> Bearded dragons, leopard
+                      geckos, corn snakes, ball pythons, Hermann's tortoises.
+                    </p>
+                    <p>
+                      <strong>Common conditions:</strong> Metabolic bone
+                      disease, respiratory infections, parasites, shell rot
+                      (tortoises).
+                    </p>
+                    <p>
+                      <strong>Care tips:</strong> Maintain correct temperature
+                      gradients, provide UVB lighting, and ensure proper
+                      humidity levels for your species.
+                    </p>
+                    <!-- Fun fact because why not? :) -->
+                    <div class="fun-fact mt-3">
+                      <i class="fa-solid fa-circle-info me-2"></i>
+                      <strong>Fun fact: 🐍</strong> Ireland has no native wild
+                      reptiles, legend has it St. Patrick drove them all out in
+                      441 AD. The island was completely covered in ice during
+                      the last Ice Age, making it too cold for any reptiles to
+                      survive. So This brings me to the question, Why do you own
+                      a snake here? You're basically undoing 1,500 years of hard
+                      work. 🐍
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Birds section -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#birds"
+                    aria-expanded="false"
+                    aria-controls="birds"
+                  >
+                    <i class="fa-solid fa-dove me-2"></i> Birds
+                  </button>
+                </h2>
+                <div
+                  id="birds"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#speciesAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      <strong>Common species:</strong> African grey parrots,
+                      budgerigars, cockatiels, lovebirds, canaries.
+                    </p>
+                    <p>
+                      <strong>Common conditions:</strong> Psittacosis, feather
+                      plucking, respiratory disease, beak and nail overgrowth.
+                    </p>
+                    <p>
+                      <strong>Care tips:</strong> Provide a spacious cage,
+                      varied diet with fresh fruit and veg, and regular
+                      out-of-cage exercise time.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Small Mammals section -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mammals"
+                    aria-expanded="false"
+                    aria-controls="mammals"
+                  >
+                    <i class="fa-solid fa-otter me-2"></i> Small Mammals
+                  </button>
+                </h2>
+                <div
+                  id="mammals"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#speciesAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      <strong>Common species:</strong> Rabbits, guinea pigs,
+                      hamsters, ferrets, chinchillas.
+                    </p>
+                    <p>
+                      <strong>Common conditions:</strong> Dental disease, GI
+                      stasis in rabbits, respiratory infections, skin mites.
+                    </p>
+                    <p>
+                      <strong>Care tips:</strong> High fibre diet (unlimited hay
+                      for rabbits and guinea pigs), spacious enclosures, and
+                      regular dental checks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Invertebrates section -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#invertebrates"
+                    aria-expanded="false"
+                    aria-controls="invertebrates"
+                  >
+                    <i class="fa-solid fa-spider me-2"></i> Invertebrates
+                  </button>
+                </h2>
+                <div
+                  id="invertebrates"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#speciesAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      <strong>Common species:</strong> Tarantulas, stick
+                      insects, giant African land snails, praying mantises.
+                    </p>
+                    <p>
+                      <strong>Common conditions:</strong> Dehydration, moulting
+                      difficulties, mite infestations, dietary deficiencies.
+                    </p>
+                    <p>
+                      <strong>Care tips:</strong> Research your species'
+                      specific humidity and temperature needs. Handle with care
+                      many invertebrates are fragile.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <hr class="footer-divider">
-      <p class="text-center mb-0">&copy; 2026 PawsAndCare.ie — All rights reserved.</p>
-    </div>
-  </footer>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/exotic.js"></script>
-</body>
+    <!-- Specialist Profiles section cream-bg is a utility class I defined in styles.css for different section colours -->
+    <section id="specialists" class="cream-bg">
+      <div class="container">
+        <h2 class="section-title text-center">Our Exotic Specialists</h2>
+        <p class="section-subtitle text-center">
+          Meet the team dedicated to exotic animal care
+        </p>
+
+        <div class="row g-4 mt-2 justify-content-center">
+          <!-- My card goes first — I added myself as a specialist on this page because i am -->
+          <div class="col-md-4">
+            <div class="specialist-card text-center">
+              <!-- specialist-avatar shows initials in a circle kept it minimal no need for photos -->
+              <div class="specialist-avatar">MR</div>
+              <h5>Dr. Mercy Robert</h5>
+              <span class="specialist-role">Exotic Pet Specialist</span>
+              <p class="mt-2">
+                The software engineer who is also very passionate about exotic
+                animal welfare with a focus on reptile and invertebrate care.
+                Well mainly cause she won't have to actually care for them. No
+                Snakes in ireland Remember? Dedicated to making specialist vet
+                care accessible in Dublin.
+              </p>
+            </div>
+          </div>
+          <!-- Reptile specialist card -->
+          <div class="col-md-4">
+            <div class="specialist-card text-center">
+              <div class="specialist-avatar">LM</div>
+              <h5>Dr. Liam Murphy</h5>
+              <span class="specialist-role">Reptile Specialist</span>
+              <p class="mt-2">
+                10+ years experience with lizards, snakes, and tortoises.
+                Special interest in metabolic bone disease. Well good thing he
+                is a made up Doctor!
+              </p>
+            </div>
+          </div>
+          <!-- Avian specialist card -->
+          <div class="col-md-4">
+            <div class="specialist-card text-center">
+              <div class="specialist-avatar">NR</div>
+              <h5>Dr. Nina Rossi</h5>
+              <span class="specialist-role">Avian Specialist</span>
+              <p class="mt-2">
+                Expert in parrot behaviour and avian respiratory disease.
+                Passionate about bird welfare. Imagine this is you, Parrots? Be
+                for real.
+              </p>
+            </div>
+          </div>
+          <!-- Small mammals specialist card -->
+          <div class="col-md-4">
+            <div class="specialist-card text-center">
+              <div class="specialist-avatar">TO</div>
+              <h5>Tomás O'Brien</h5>
+              <span class="specialist-role">Small Mammals</span>
+              <p class="mt-2">
+                Specialist in rabbit and guinea pig care, dental procedures, and
+                small mammal nutrition.In ireland? I wonder if he cares for the
+                porks on the shelf at Lidl.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care Tips section 3 simple cards (Housing, Nutrition, Warning Signs)
+       These are meant to give the page more substance, it is a quick guide before users even book an appointment -->
+    <section id="care-tips">
+      <div class="container">
+        <h2 class="section-title text-center">Exotic Pet Care Tips</h2>
+        <div class="row g-4 mt-2">
+          <!-- Housing card -->
+          <div class="col-md-4">
+            <div class="care-card text-center">
+              <!-- care-icon uses the same circular icon style as the service cards on the home page -->
+              <div class="care-icon"><i class="fa-solid fa-house"></i></div>
+              <h5>Housing</h5>
+              <p>
+                Research standard building and warm establishments for your
+                species. Temperature gradients are critical for reptiles. I
+                wonder what that means, with the rising cost of housing and
+                heating in Ireland, maybe it's best to just keep them outside?
+                I'm just kidding.
+              </p>
+            </div>
+          </div>
+          <!-- Nutrition card -->
+          <div class="col-md-4">
+            <div class="care-card text-center">
+              <div class="care-icon"><i class="fa-solid fa-bowl-food"></i></div>
+              <h5>Nutrition</h5>
+              <p>
+                Each species has different dietary needs. Provide different
+                diets and supplement with vitamins where needed(HEHEHE, You
+                wanted pets, now take care of them).
+              </p>
+            </div>
+          </div>
+          <!-- Warning Signs card -->
+          <div class="col-md-4">
+            <div class="care-card text-center">
+              <div class="care-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <h5>Warning Signs</h5>
+              <p>
+                Watch for tiredness(lethargy-fancy version), loss of appetite,
+                unusual discharge, or changes in droppings. Early detection
+                saves lives. Don't joke with this, else I would be charging you
+                more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pet Quiz section this is the javascript interactive feature I built for this page
+       Users answer 3 questions and get a recommended exotic pet at the end.
+       The quiz logic (navigation, scoring, result display) is all handled in exotic.js -->
+    <section id="pet-quiz" class="cream-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <h2 class="section-title text-center">
+              Find Your Exotic Pet Match
+            </h2>
+            <p class="section-subtitle text-center">
+              Answer 3 quick questions and watch the magic happen, i will pair
+              you with right exotic pet for you!
+            </p>
+
+            <!-- quizContainer is targeted by exotic.js to find the quiz steps and inputs -->
+            <div id="quizContainer" class="quiz-container mt-4">
+              <!-- Question 1 — starts with .active so it's the first visible step
+                 data-step is used by my js to identify which step to show or hide -->
+              <div class="quiz-step active" data-step="1">
+                <h5 class="quiz-question">How much space do you have?</h5>
+                <!-- quiz-options wraps all the radio labels in a flex column -->
+                <div class="quiz-options">
+                  <!-- Each option is a label wrapping a radio input — clicking anywhere on the label selects the radio -->
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="small" /> A small flat
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="medium" /> A house with
+                    a garden
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="large" /> A large
+                    dedicated room or enclosure
+                  </label>
+                </div>
+                <!-- quiz-nav has the step counter and navigation buttons in a space-between flex row -->
+                <div class="quiz-nav mt-3">
+                  <span class="quiz-stage">Step 1 of 3</span>
+                  <!-- quiz-next class is what exotic.js listens for — data-next tells it where to go -->
+                  <button class="btn btn-cta btn-sm quiz-next" data-next="2">
+                    Next <i class="fa-solid fa-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 2 hidden by default, visible when Next is clicked on step 1 -->
+              <div class="quiz-step" data-step="2">
+                <h5 class="quiz-question">
+                  How much time can you dedicate daily?
+                </h5>
+                <div class="quiz-options">
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="low" /> Under 30
+                    minutes
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="medium" /> 30 minutes
+                    to 1 hour
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="high" /> Over 1 hour
+                  </label>
+                </div>
+                <div class="quiz-nav mt-3">
+                  <!-- quiz-prev goes back, data-prev tells my js which step to return to -->
+                  <button
+                    class="btn btn-outline-secondary btn-sm quiz-prev"
+                    data-prev="1"
+                  >
+                    <i class="fa-solid fa-arrow-left me-1"></i> Back
+                  </button>
+                  <span class="quiz-stage">Step 2 of 3</span>
+                  <button class="btn btn-cta btn-sm quiz-next" data-next="3">
+                    Next <i class="fa-solid fa-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 3 — last step, has quizSubmit button instead of Next -->
+              <div class="quiz-step" data-step="3">
+                <h5 class="quiz-question">
+                  How do you feel about handling your pet?
+                </h5>
+                <div class="quiz-options">
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="hands-off" /> I prefer
+                    to observe no touching(You are just like me, hehehe)
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="occasional" />
+                    Occasional gentle handling is fine(yen yen yen)
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="hands-on" /> I want a
+                    pet I can interact with regularly(Whatever you say boss)
+                  </label>
+                </div>
+                <div class="quiz-nav mt-3">
+                  <button
+                    class="btn btn-outline-secondary btn-sm quiz-prev"
+                    data-prev="2"
+                  >
+                    <i class="fa-solid fa-arrow-left me-1"></i> Back
+                  </button>
+                  <span class="quiz-stage">Step 3 of 3</span>
+                  <!-- quizSubmit is targeted directly by ID in js to trigger the scoring function -->
+                  <button class="btn btn-cta btn-sm" id="quizSubmit">
+                    See My Match
+                    <i class="fa-solid fa-wand-magic-sparkles ms-1"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- This div is hidden by default (display:none inline style)
+                js fills it with the result card HTML and fades it in after the quiz -->
+              <div
+                id="quizResult"
+                class="quiz-result"
+                style="display: none"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA section simple link to the main purpose of the website 
+     The query ?type=exotic URL parameter is picked up by book.js to select exotic in the dropdown -->
+    <section id="exotic-cta" class="text-center">
+      <div class="container">
+        <h3>Ready to give your exotic pet the best care?</h3>
+        <a href="book.html?type=exotic" class="btn btn-cta btn-lg mt-3">
+          Book Exotic Appointment <i class="fa-solid fa-arrow-right ms-2"></i>
+        </a>
+
+        <!-- Disclaimer banner just a fun to include since the booking form looks very real
+           but it isnt so I added this to make that clear: Maybe my veterinarian side just wanted to be clear i was joking half the time.LOL-->
+        <div class="disclaimer mt-5">
+          <i class="fa-solid fa-triangle-exclamation me-2"></i>
+          <strong>Disclaimer:</strong> Exotic pet care requires specialist
+          knowledge. Always consult a qualified exotic veterinarian before
+          making care or dietary decisions for your pet. The information on this
+          page is for guidance only.
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer  same 3-column layout used across all my pages -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Brand column -->
+          <div class="col-md-4">
+            <h5 class="footer-brand">
+              <i class="fa-solid fa-paw me-2"></i>PawsAndCare
+            </h5>
+            <p>Expert veterinary care for all your pets in Dublin.</p>
+          </div>
+          <!-- Quick links column -->
+          <div class="col-md-4">
+            <h6 class="footer-heading">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="exotic.html">Exotic Pets</a></li>
+              <li><a href="book.html">Book Now</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Contact column with social icons -->
+          <div class="col-md-4">
+            <h6 class="footer-heading">Contact Us</h6>
+            <ul class="footer-contact">
+              <li>
+                <i class="fa-solid fa-location-dot me-2"></i>123 Pet Street,
+                Dublin 2, Ireland
+              </li>
+              <li><i class="fa-solid fa-phone me-2"></i>+353 87 435 5196</li>
+              <li>
+                <i class="fa-solid fa-envelope me-2"></i>info@pawsandcare.ie
+              </li>
+            </ul>
+            <!-- Social icons are placeholders for now -->
+            <div class="footer-socials mt-3">
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <p class="text-center mb-0">
+          &copy; 2026 PawsAndCare.ie - All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle needed for the accordion and navbar toggler to work -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery loaded before my own scripts since my own js uses it -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- main.js handles the navbar scroll effect shared across all pages -->
+    <script src="../js/main.js"></script>
+    <!-- exotic.js handles the quiz navigation, scoring, and result display -->
+    <script src="../js/exotic.js"></script>
+
+    <!--
+       REFERENCES & RESOURCES
+    -->
+    <!-- Bootstrap Accordion component used for the species sections:
+       https://getbootstrap.com/docs/5.3/components/accordion/ -->
+    <!-- jQuery .closest() and .find() used in quiz navigation:
+       https://api.jquery.com/closest/ | https://api.jquery.com/find/ -->
+  </body>
 </html>
