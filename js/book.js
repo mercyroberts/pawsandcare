@@ -102,9 +102,9 @@ $(document).ready(function () {
   var validationRules = {
     petName: {
       test: function (val) {
-        return val.trim().length >= 5;
+        return val.trim().length >= 3;
       },
-      message: "Pet name must be at least 5 characters.",
+      message: "Pet name must be at least 3 characters.",
     },
     ownerName: {
       test: function (val) {
@@ -235,7 +235,7 @@ $(document).ready(function () {
         booking.petName +
         "</strong> (" +
         booking.petType +
-        ") — " +
+        ") : " +
         booking.service +
         "<br>" +
         booking.time +
