@@ -1,283 +1,304 @@
-/* ══════════════════════════════════════════
-   CONTACT PAGE — contact.css
-   ══════════════════════════════════════════ */
+/*
+    CONTACT PAGE — contact.css
+    Styles specific to contact.html
+*/
 
-/* ── Page Header ── */
+/* CONTACT HERO
+   Same teal gradient used on other pages, keeps the design consistent.
+   Subtitle uses opacity 0.85 so it looks lighter than the main title. */
 .contact-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
-    padding: 3.5rem 0 2.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
+  padding: 3.5rem 0 2.5rem;
 }
 
 .contact-hero .section-title,
 .contact-hero .section-subtitle {
-    color: #fff;
+  color: #fff;
 }
 
 .contact-hero .section-subtitle {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
-/* ── Contact Section ── */
+/* CONTACT SECTION
+two-column layout (form + clinic info card). */
 .contact-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-/* ── Contact Form Card ── */
+/* CONTACT FORM CARD
+   White card with a soft shadow. height: 100% keeps it aligned with the clinic info card on the right. */
 .contact-form-card {
-    background: #fff;
-    border-radius: var(--radius-card);
-    padding: 2rem;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
-    height: 100%;
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  height: 100%;
 }
 
 .contact-form-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.35rem;
 }
 
 .contact-form-subtitle {
-    font-size: 0.9rem;
-    color: var(--text-color-muted);
-    margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color-muted);
+  margin-bottom: 1.5rem;
 }
 
-/* ── Form Inputs ── */
+/* FORM INPUTS
+   Rounded inputs with a teal focus ring instead of Bootstrap's default blue. */
 .contact-input {
-    border-radius: var(--radius-input);
-    border: 1px solid #ddd;
-    padding: 0.6rem 0.9rem;
-    font-family: var(--font-body);
-    transition: border-color var(--transition-default), box-shadow var(--transition-default);
+  border-radius: var(--radius-input);
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-body);
+  transition:
+    border-color var(--transition-default),
+    box-shadow var(--transition-default);
 }
 
 .contact-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
-    outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(11, 110, 110, 0.15);
+  outline: none;
 }
 
 .form-label {
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
 }
 
-/* ── Clinic Info Card ── */
+/* CLINIC INFO CARD
+    background card on the right column showing address, phone, email, and hours. */
 .clinic-info-card {
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: var(--radius-card);
-    padding: 2rem;
-    height: 100%;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  height: 100%;
 }
 
 .clinic-info-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .clinic-info-icon {
-    font-size: 1.5rem;
-    opacity: 0.9;
+  font-size: 1.5rem;
+  opacity: 0.9;
 }
 
 .clinic-info-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0;
 }
 
-/* ── Clinic Details List ── */
+/* CLINIC DETAILS LIST
+   Flex column list with icons and text for address, phone, and email. */
 .clinic-details-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 0;
+  margin: 0;
 }
 
 .clinic-details-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .clinic-details-list li i {
-    margin-top: 0.15rem;
-    opacity: 0.85;
-    flex-shrink: 0;
+  margin-top: 0.15rem;
+  opacity: 0.85;
+  flex-shrink: 0;
 }
 
-/* ── Divider inside card ── */
+/* DIVIDER
+   Semi-transparent white line separating contact details from opening hours. */
 .clinic-divider {
-    border-color: rgba(255, 255, 255, 0.25);
-    margin: 1.5rem 0;
+  border-color: rgba(255, 255, 255, 0.25);
+  margin: 1.5rem 0;
 }
 
-/* ── Opening Hours ── */
+/* OPENING HOURS
+   Simple table inside the clinic info card. Emergency only Sunday row uses accent colour. */
 .clinic-hours-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
 }
 
 .clinic-hours-table {
-    width: 100%;
-    font-size: 0.9rem;
-    border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+  border-collapse: collapse;
 }
 
 .clinic-hours-table td {
-    padding: 0.35rem 0;
-    vertical-align: top;
+  padding: 0.35rem 0;
+  vertical-align: top;
 }
 
 .clinic-hours-table td:first-child {
-    font-weight: 600;
-    width: 45%;
+  font-weight: 600;
+  width: 45%;
 }
 
 .emergency-text {
-    color: var(--accent-color);
-    font-weight: 700;
+  color: var(--accent-color);
+  font-weight: 700;
 }
 
-/* ── Map Card ── */
+/* MAP CARD
+   Full-width card below the two-column section. Contains transport info + Google Maps iframe. */
 .map-card {
-    background: #fff;
-    border-radius: var(--radius-card);
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
-    overflow: hidden;
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
 }
 
 .map-card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .map-card-icon {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: var(--primary-color-light);
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
 .map-card-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.1rem;
 }
 
 .map-card-subtitle {
-    font-size: 0.875rem;
-    color: var(--text-color-muted);
-    margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--text-color-muted);
+  margin-bottom: 0;
 }
 
 .map-card-body {
-    display: flex;
-    min-height: 320px;
+  display: flex;
+  min-height: 320px;
 }
 
-/* ── Map Info Column ── */
+/* MAP INFO COLUMN
+   Left side of the map card showing address, bus, Luas, and parking details as a flex list. */
 .map-info-col {
-    width: 300px;
-    flex-shrink: 0;
-    padding: 1.75rem 1.5rem;
-    border-right: 1px solid #f0f0f0;
-    background: var(--background-secondary);
+  width: 300px;
+  flex-shrink: 0;
+  padding: 1.75rem 1.5rem;
+  border-right: 1px solid #f0f0f0;
+  background: var(--background-secondary);
 }
 
 .map-info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0;
 }
 
 .map-info-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.85rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
 }
 
 .map-info-icon {
-    flex-shrink: 0;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #fff;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .map-info-label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--primary-color);
-    margin-bottom: 0.15rem;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+  margin-bottom: 0.15rem;
 }
 
 .map-info-value {
-    display: block;
-    font-size: 0.875rem;
-    color: var(--text-color);
-    line-height: 1.4;
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  line-height: 1.4;
 }
 
-/* ── Map Iframe Column ── */
+/* MAP IFRAME COLUMN
+   Right side of the map card. Contains the Google Maps embed iframe filling the remaining space. */
 .map-iframe-col {
-    flex: 1;
-    min-height: 320px;
+  flex: 1;
+  min-height: 320px;
 }
 
 .map-iframe-col iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-/* ── Responsive ── */
+/* RESPONSIVE
+   On mobile (max-width: 767.98px) the map card stacks vertically:
+   info column goes full-width above the iframe. */
 @media (max-width: 767.98px) {
-    .map-card-body {
-        flex-direction: column;
-    }
+  .map-card-body {
+    flex-direction: column;
+  }
 
-    .map-info-col {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #f0f0f0;
-    }
+  .map-info-col {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
 
-    .map-iframe-col {
-        min-height: 260px;
-    }
+  .map-iframe-col {
+    min-height: 260px;
+  }
 }

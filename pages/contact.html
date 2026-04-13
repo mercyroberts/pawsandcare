@@ -1,6 +1,9 @@
+<!-- Name: Joao Lucas Bugati | Student Number: x25163116 -->
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- META INFO, STYLESHEETS & FONTS -->
+    <!-- Meta: charset, viewport, SEO description and keywords -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -12,24 +15,33 @@
       content="contact vet Dublin, PawsAndCare contact, veterinary clinic Dublin, pet care Ireland"
     />
     <title>Contact Us - PawsAndCare</title>
+    <!-- Favicon so the little paw icon shows up in the browser tab -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap 5.3.3 CSS loaded from CDN instead of locally to keep my project folder lighter -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Font Awesome 6 Icons (CDN) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- Google Fonts: Nunito (body) + Poppins (headings) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Global design tokens, typography, shared components (navbar, footer, cards) -->
     <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Styles for the team page -->
     <link rel="stylesheet" href="../css/contact.css" />
   </head>
   <body>
-    <!-- NAVIGATION - Contact link active -->
+    <!-- SECTION 1: NAVIGATION
+         Bootstrap Navbar (navbar-expand-lg, sticky-top, navbar-dark).
+         "Contact" link has .active + aria-current="page" to reflect the current page.
+         Collapses to hamburger on mobile via data-bs-toggle="collapse". -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand fw-bold" href="../index.html">
@@ -73,7 +85,9 @@
       </div>
     </nav>
 
-    <!-- PAGE HEADER - Title + Subtitle -->
+    <!-- SECTION 2: CONTACT HERO
+         Full-width banner with page title and subtitle.
+         Styled .contact-hero in contact.css. -->
     <section class="contact-hero">
       <div class="container text-center">
         <h1 class="section-title">Contact Us</h1>
@@ -83,11 +97,14 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION - Two-column layout -->
+    <!-- SECTION 3: CONTACT SECTION
+         It has the clinic info card. -->
     <section class="contact-section cream-bg">
       <div class="container">
         <div class="row g-4 align-items-start">
-          <!-- Left col-md-7: Contact Form -->
+          <!-- Contact Form
+               Bootstrap form with novalidate.
+               JS: #contactForm submit event handled in contact.js. -->
           <div class="col-md-7">
             <div class="contact-form-card">
               <h2 class="contact-form-title">Send Us a Message</h2>
@@ -146,7 +163,8 @@
             </div>
           </div>
 
-          <!-- Right col-md-5: Clinic Info Card -->
+          <!-- Clinic Info Card
+               Displays address, phone, email, and opening hours. -->
           <div class="col-md-5">
             <div class="clinic-info-card">
               <div class="clinic-info-header">
@@ -175,12 +193,12 @@
               <table class="clinic-hours-table">
                 <tbody>
                   <tr>
-                    <td>Mon – Fri</td>
-                    <td>08:00 – 18:00</td>
+                    <td>Mon - Fri</td>
+                    <td>08:00 - 18:00</td>
                   </tr>
                   <tr>
                     <td>Saturday</td>
-                    <td>09:00 – 16:00</td>
+                    <td>09:00 - 16:00</td>
                   </tr>
                   <tr>
                     <td>Sunday</td>
@@ -192,7 +210,9 @@
           </div>
         </div>
 
-        <!-- Find Us — Map Card -->
+        <!-- Map Card
+             Google Maps embed (iframe) showing Dublin 2 location.
+             Transport info: bus routes, Luas Red Line, and parking details. -->
         <div class="map-card mt-5">
           <div class="map-card-header">
             <div class="map-card-icon">
@@ -201,14 +221,14 @@
             <div>
               <h3 class="map-card-title">Find Us</h3>
               <p class="map-card-subtitle">
-                We are located in the heart of Dublin 2 — easy to reach by bus,
+                We are located in the heart of Dublin 2 - easy to reach by bus,
                 Luas, and DART.
               </p>
             </div>
           </div>
 
           <div class="map-card-body">
-            <!-- Left: access info -->
+            <!-- Transport & Access Info -->
             <div class="map-info-col">
               <ul class="map-info-list">
                 <li>
@@ -229,7 +249,7 @@
                   <div>
                     <span class="map-info-label">Bus</span>
                     <span class="map-info-value"
-                      >Routes 7, 7A, 46A — stop at Merrion Square</span
+                      >Routes 7, 7A, 46A - stop at Merrion Square</span
                     >
                   </div>
                 </li>
@@ -240,7 +260,7 @@
                   <div>
                     <span class="map-info-label">Luas</span>
                     <span class="map-info-value"
-                      >Red Line — Connolly (10 min walk)</span
+                      >Red Line - Connolly (10 min walk)</span
                     >
                   </div>
                 </li>
@@ -251,14 +271,15 @@
                   <div>
                     <span class="map-info-label">Parking</span>
                     <span class="map-info-value"
-                      >Merrion Square car park — 5 min walk</span
+                      >Merrion Square car park - 5 min walk</span
                     >
                   </div>
                 </li>
               </ul>
             </div>
 
-            <!-- Right: map iframe -->
+            <!-- Google Maps Iframe
+                 Source: https://maps.google.com map centered on Dublin 2, Ireland. -->
             <div class="map-iframe-col">
               <iframe
                 src="https://maps.google.com/maps?q=Dublin+2,+Ireland&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -329,16 +350,34 @@
         </div>
         <hr class="footer-divider" />
         <p class="text-center mb-0">
-          &copy; 2026 PawsAndCare.ie — All rights reserved.
+          &copy; 2026 PawsAndCare.ie - All rights reserved.
         </p>
       </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (CDN) -->
+    <!-- Bootstrap 5.3.3 JS Bundle includes Popper.js (required for dropdowns/tooltips) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Shared JS -->
+    <!-- main.js — shared behaviours across all pages -->
     <script src="../js/main.js"></script>
-    <!-- Page-specific JS -->
+    <!-- contact.js — handles #contactForm submit validation and feedback -->
     <script src="../js/contact.js"></script>
   </body>
-</html>
+  <!--
+REFERENCES & RESOURCES
+The following external resources were used in this page:
+
+- Bootstrap Navbar component:
+  https://getbootstrap.com/docs/5.3/components/navbar/
+
+- Bootstrap Grid system (col-md-7, col-md-5, row g-4):
+  https://getbootstrap.com/docs/5.3/layout/grid/
+
+- Bootstrap Form components (form-control, form-label, novalidate):
+  https://getbootstrap.com/docs/5.3/forms/overview/
+
+- Font Awesome Icons (fa-paw, fa-location-dot, fa-phone, fa-envelope, etc.):
+  https://fontawesome.com/icons
+
+- Google Maps Embed API (iframe map showing Dublin 2 location):
+  https://developers.google.com/maps/documentation/embed/get-started
+--></html>
