@@ -1,4 +1,4 @@
-/* ════
+/* 
    main.js Shared JS for PawsAndCare
    This file runs on every page and handles:
    - Navbar colour change when the user scrolls down
@@ -7,7 +7,7 @@
    - Custom review carousel with auto-rotate, prev/next and dot navigation (index.html only)
    I used jQuery for DOM manipulation since it makes selecting elements and adding
    event listeners a lot cleaner than pure vanilla javascript.
-   ════ */
+    */
 
 // Wait for the page to fully load before running any of my code,
 // it is not strictly necessary, since my javascript is at the end of the body and will run after the HTML is parsed,
