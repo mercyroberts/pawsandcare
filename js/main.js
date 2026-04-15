@@ -1,4 +1,6 @@
-/* 
+/* jshint esversion: 8 */
+/* global $ */
+/*
    main.js Shared JS for PawsAndCare
    This file runs on every page and handles:
    - Navbar colour change when the user scrolls down

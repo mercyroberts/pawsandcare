@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+/* global $ */
 /*
    book.js, Booking page logic
    This file handles everything on the booking form
