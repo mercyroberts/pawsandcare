@@ -3,35 +3,35 @@
 <html lang="en">
   <!-- Head section with meta info, stylesheets and fonts needed for the booking page -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO meta tags so search engines can find the booking page -->
     <meta
       name="description"
       content="Book a veterinary appointment at PawsAndCare.ie easy online booking for dogs, cats, and exotic pets."
-    />
+   >
     <meta
       name="keywords"
       content="vet appointment, book vet, Dublin, PawsAndCare, pet booking"
-    />
+   >
     <title>Book an Appointment - PawsAndCare</title>
 
     <!-- Favicon so the paw icon shows up in the browser tab -->
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
     <!-- Bootstrap 5 from CDN-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+   >
     <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+   >
     <!-- Shared styles -->
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Booking page specific styles -->
-    <link rel="stylesheet" href="../css/book.css" />
+    <link rel="stylesheet" href="../css/book.css">
   </head>
   <body>
     <!-- Navigation, same navbar used across all my pages -->
@@ -101,9 +101,9 @@
                 <div class="col-md-6">
                   <!-- form-section is a custom class that gives each group a cream card background -->
                   <div class="form-section">
-                    <h5 class="form-section-title">
+                    <h2 class="form-section-title">
                       <i class="fa-solid fa-paw me-2"></i>Pet Details
-                    </h5>
+                    </h2>
 
                     <!-- Pet name input is required, book.js validates it needs at least 3 characters -->
                     <div class="mb-3">
@@ -116,7 +116,7 @@
                         id="petName"
                         placeholder="e.g. Buddy"
                         required
-                      />
+                     >
                       <!-- invalid-feedback is Bootstrap's error message class, shown when is-invalid is added by javascript-->
                       <div class="invalid-feedback">
                         Please enter your pet's name.
@@ -168,9 +168,9 @@
                 <!-- Owner Details column appears on right side on desktop -->
                 <div class="col-md-6">
                   <div class="form-section">
-                    <h5 class="form-section-title">
+                    <h2 class="form-section-title">
                       <i class="fa-solid fa-user me-2"></i>Owner Details
-                    </h5>
+                    </h2>
 
                     <div class="mb-3">
                       <label for="ownerName" class="form-label"
@@ -182,7 +182,7 @@
                         id="ownerName"
                         placeholder="Mercy Robert"
                         required
-                      />
+                     >
                       <div class="invalid-feedback">
                         Please enter your full name.
                       </div>
@@ -199,7 +199,7 @@
                         id="ownerEmail"
                         placeholder="mercy@email.com"
                         required
-                      />
+                     >
                       <div class="invalid-feedback">
                         Please enter a valid email address.
                       </div>
@@ -216,7 +216,7 @@
                         id="ownerPhone"
                         placeholder="+353 87 123 4567"
                         required
-                      />
+                     >
                       <div class="invalid-feedback">
                         Please enter a valid phone number (e.g. +353 87 123
                         4567).
@@ -230,9 +230,9 @@
                    When a date is picked, book.js generates clickable time slot buttons
                    Some slots are randomly marked as "taken" to make it feel realistic -->
               <div class="form-section mt-4">
-                <h5 class="form-section-title">
+                <h2 class="form-section-title">
                   <i class="fa-solid fa-calendar-days me-2"></i>Date & Time
-                </h5>
+                </h2>
 
                 <div class="row align-items-start">
                   <!-- Date picker, mu js sets min to today so you can't book in the past -->
@@ -245,7 +245,7 @@
                       class="form-control"
                       id="appointmentDate"
                       required
-                    />
+                   >
                     <div class="invalid-feedback">Please select a date.</div>
                   </div>
                   <!-- Time slots container my js populates this with buttons when a date is chosen -->
@@ -257,7 +257,7 @@
                       </p>
                     </div>
                     <!-- Hidden input stores the selected time value so it gets submitted with the form -->
-                    <input type="hidden" id="selectedTime" required />
+                    <input type="hidden" id="selectedTime">
                     <!-- Time error message hidden by default, book.js shows it if no slot is picked on submission -->
                     <div
                       class="invalid-feedback d-block"
@@ -290,7 +290,7 @@
                 <!-- The big green checkmark icon-->
                 <i class="fa-solid fa-circle-check fa-2x me-3 text-success"></i>
                 <div>
-                  <h5 class="mb-1">Booking Confirmed!</h5>
+                  <h3 class="mb-1">Booking Confirmed!</h3>
                   <!-- confirmationDetails is filled by book.js with the pet name, service, date and time -->
                   <p id="confirmationDetails" class="mb-1"></p>
                   <small class="text-muted"
@@ -311,14 +311,14 @@
         <div class="row g-4">
           <!-- Brand column -->
           <div class="col-md-4">
-            <h5 class="footer-brand">
+            <h3 class="footer-brand">
               <i class="fa-solid fa-paw me-2"></i>PawsAndCare
-            </h5>
+            </h3>
             <p>Expert veterinary care for all your pets in Dublin.</p>
           </div>
           <!-- Quick links column -->
           <div class="col-md-4">
-            <h6 class="footer-heading">Quick Links</h6>
+            <h4 class="footer-heading">Quick Links</h4>
             <ul class="footer-links">
               <li><a href="../index.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
@@ -329,7 +329,7 @@
           </div>
           <!-- Contact column with social nedia icons -->
           <div class="col-md-4">
-            <h6 class="footer-heading">Contact Us</h6>
+            <h4 class="footer-heading">Contact Us</h4>
             <ul class="footer-contact">
               <li>
                 <i class="fa-solid fa-location-dot me-2"></i>123 Pet Street,
@@ -354,7 +354,7 @@
             </div>
           </div>
         </div>
-        <hr class="footer-divider" />
+        <hr class="footer-divider">
         <p class="text-center mb-0">
           &copy; 2026 PawsAndCare.ie - All rights reserved.
         </p>
