@@ -199,7 +199,7 @@ section {
   font-size: 0.9rem;
 }
 
-.footer-heading {
+h4.footer-heading {
   color: #fff;
   font-family: var(--font-heading);
   font-weight: 700;

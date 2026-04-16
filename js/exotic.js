@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+/* global $ */
 /*
    exotic.js Exotic pets page logic
    This file handles the "Which Exotic Pet Suits You?" quiz:
