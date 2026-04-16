@@ -182,7 +182,7 @@
   margin: 0 auto 1rem;
 }
 
-.service-card h5 {
+.service-card h3 {
   font-size: 1rem;
   font-weight: 700;
 }
@@ -233,7 +233,7 @@
   font-size: 1rem;
 }
 
-.why-item h5 {
+.why-item h3 {
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }

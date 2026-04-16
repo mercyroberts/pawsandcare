@@ -3,36 +3,36 @@
 <html lang="en">
   <head>
     <!-- This head section has all the meta info, stylesheets and fonts the page needs to load properly -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Added these meta tags for SEO so search engines can find this page easier -->
     <meta
       name="description"
       content="PawsAndCare.ie — Browse all veterinary services for dogs, cats, and exotic pets in Dublin. Use the pricing estimator to plan your visit."
-    />
+   >
     <meta
       name="keywords"
       content="vet services, veterinary Dublin, dog vet, cat vet, exotic vet, grooming, dental, vaccination"
-    />
+   >
     <title>Services - PawsAndCare</title>
     <!-- Favicon so the little paw icon shows up in the browser tab -->
-    <link rel="icon" href="../assets/pawprint.png" type="image/x-icon" />
+    <link rel="icon" href="../assets/pawprint.png" type="image/x-icon">
     <!-- Bootstrap 5.3.3 CSS loaded from CDN instead of locally to keep my project folder lighter -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+   >
     <!-- Font Awesome 6.5.1 icon (CDN) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+   >
     <!-- Global design tokens, typography, shared components (navbar, footer, cards) -->
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Shared styles for the home page and the services page -->
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/index.css">
     <!-- Styles for the services page -->
-    <link rel="stylesheet" href="../css/services.css" />
+    <link rel="stylesheet" href="../css/services.css">
   </head>
   <body>
     <!-- SECTION 1: NAVIGATION
@@ -109,6 +109,7 @@
          the class active and filter it as the user selects different options.-->
     <section class="services-filter-section">
       <div class="container">
+        <h2 class="visually-hidden">Filter Services</h2>
         <div
           class="d-flex flex-wrap justify-content-center gap-2"
           id="filterPills"
@@ -144,6 +145,7 @@
          JS hook: services.js reads #servicesGrid .service-item and toggles display:none based on the active filter pill.-->
     <section class="services-grid-section">
       <div class="container">
+        <h2 class="visually-hidden">Service Cards</h2>
         <div class="row g-4" id="servicesGrid">
           <!-- Card 1: General Consultation - dogs, cats and exotic pets -->
           <div
@@ -154,7 +156,7 @@
               <div class="service-icon">
                 <i class="fa-solid fa-stethoscope"></i>
               </div>
-              <h5>General Consultation</h5>
+              <h3>General Consultation</h3>
               <p>
                 A thorough health assessment by one of our experienced vets
                 covering diagnosis, treatment plans, and preventive advice.
@@ -169,7 +171,7 @@
               <div class="service-icon">
                 <i class="fa-solid fa-syringe"></i>
               </div>
-              <h5>Vaccination Package</h5>
+              <h3>Vaccination Package</h3>
               <p>
                 Keep your pet protected with our comprehensive vaccination
                 packages, tailored to your pet's age and lifestyle.
@@ -184,7 +186,7 @@
               <div class="service-icon">
                 <i class="fa-solid fa-scissors"></i>
               </div>
-              <h5>Full Grooming</h5>
+              <h3>Full Grooming</h3>
               <p>
                 Bath, blow-dry, brushing, nail trim, ear cleaning, and
                 breed-specific styling performed by certified groomers.
@@ -199,7 +201,7 @@
               <div class="service-icon">
                 <i class="fa-solid fa-tooth"></i>
               </div>
-              <h5>Dental Cleaning</h5>
+              <h3>Dental Cleaning</h3>
               <p>
                 Professional ultrasonic scaling and polishing under light
                 sedation to prevent periodontal disease and bad breath.
@@ -217,7 +219,7 @@
               <div class="service-icon">
                 <i class="fa-solid fa-truck-medical"></i>
               </div>
-              <h5>Emergency Care</h5>
+              <h3>Emergency Care</h3>
               <p>
                 24/7 emergency services staffed by specialist vets. Immediate
                 triage, stabilisation, and critical care for all pets.
@@ -235,7 +237,7 @@
               <div class="service-icon">
                 <i class="fa-solid fa-heart-pulse"></i>
               </div>
-              <h5>Wellness Plan</h5>
+              <h3>Wellness Plan</h3>
               <p>
                 Monthly subscription covering routine check-ups, vaccinations,
                 flea/worm treatment, and discounts on other services.
@@ -271,7 +273,7 @@
                     type="checkbox"
                     id="consultation"
                     data-price="55"
-                  />
+                 >
                   <label
                     class="form-check-label estimator-label"
                     for="consultation"
@@ -288,7 +290,7 @@
                     type="checkbox"
                     id="vaccination"
                     data-price="75"
-                  />
+                 >
                   <label
                     class="form-check-label estimator-label"
                     for="vaccination"
@@ -305,7 +307,7 @@
                     type="checkbox"
                     id="grooming"
                     data-price="45"
-                  />
+                 >
                   <label
                     class="form-check-label estimator-label"
                     for="grooming"
@@ -322,7 +324,7 @@
                     type="checkbox"
                     id="dental"
                     data-price="120"
-                  />
+                 >
                   <label class="form-check-label estimator-label" for="dental">
                     <span>Dental Cleaning</span>
                     <span class="estimator-price">€120</span>
@@ -336,7 +338,7 @@
                     type="checkbox"
                     id="emergency"
                     data-price="150"
-                  />
+                 >
                   <label
                     class="form-check-label estimator-label"
                     for="emergency"
@@ -353,7 +355,7 @@
                     type="checkbox"
                     id="wellness"
                     data-price="35"
-                  />
+                 >
                   <label
                     class="form-check-label estimator-label"
                     for="wellness"
@@ -393,9 +395,9 @@
         <div class="row g-4">
           <!-- Brand -->
           <div class="col-md-4">
-            <h5 class="footer-brand">
+            <h3 class="footer-brand">
               <i class="fa-solid fa-paw me-2"></i>PawsAndCare
-            </h5>
+            </h3>
             <p>
               Expert veterinary care for all your pets in Dublin. Compassionate,
               professional, and always here for you.
@@ -403,7 +405,7 @@
           </div>
           <!-- Quick Links -->
           <div class="col-md-4">
-            <h6 class="footer-heading">Quick Links</h6>
+            <h4 class="footer-heading">Quick Links</h4>
             <ul class="footer-links">
               <li><a href="../index.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
@@ -415,7 +417,7 @@
           </div>
           <!-- Contact Info -->
           <div class="col-md-4">
-            <h6 class="footer-heading">Contact Us</h6>
+            <h4 class="footer-heading">Contact Us</h4>
             <ul class="footer-contact">
               <li>
                 <i class="fa-solid fa-location-dot me-2"></i>123 Pet Street,
@@ -439,7 +441,7 @@
             </div>
           </div>
         </div>
-        <hr class="footer-divider" />
+        <hr class="footer-divider">
         <p class="text-center mb-0">
           &copy; 2026 PawsAndCare.ie - All rights reserved.
         </p>
