@@ -1,4 +1,4 @@
-
+  //  Name: Joao Lucas Bugati | Student Number: x25163116  
   //  services.js — Services page functionality
   //  Features: Category filter + Pricing estimator
 

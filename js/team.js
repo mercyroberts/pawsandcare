@@ -1,3 +1,4 @@
+//  Name: Joao Lucas Bugati | Student Number: x25163116  
 // team.js
 // Team page functionality
 // Features: Search by name / role using keyup event

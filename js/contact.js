@@ -1,3 +1,4 @@
+//  Name: Joao Lucas Bugati | Student Number: x25163116  
 // contact.js
 // Contact page functionality
 // Features: Form validation + feedback
